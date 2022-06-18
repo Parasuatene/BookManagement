@@ -4,13 +4,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
-		<title>書籍情報</title>
+		<title>書籍貸出画面</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
-		<%@ include file="header.jsp" %>
+		<h1>貸出管理画面</h1>
 
 		<c:set var="book" value="${book}"/>
 
@@ -28,7 +26,13 @@
 				<p>${book.publisher}</p>
 				<p>${book.imgPath}</p>
 				<p>${book.discription}</p>
-				<button onclick="location.href='rentalRequest?id=${book.id}'">貸出申請を行う</button>
+				<button onclick="location.href='bookInfo?id=${book.id}'">戻る</button>
+				<!-- TODO: 申請する際は申請情報をPOSTするようにする -->
+				<!-- <button onclick="location.href='rentalComplete'">申請</button> -->
+				<form action="rentalComplete" method="post">
+					<input type="hidden" name="rental_request" value="${book}">
+					<input type="submit" value="申請">
+				</form>
 			</div>
 		</c:if>
 	</body>

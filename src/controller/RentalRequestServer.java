@@ -12,10 +12,10 @@ import dataaccess.value.Book;
 import service.BookService;
 
 /**
- * Servlet implementation class BookInfoServlet
+ * Servlet implementation class RentalRequestServer
  */
-@WebServlet("/bookInfo")
-public class BookInfoServlet extends HttpServlet {
+@WebServlet("/rentalRequest")
+public class RentalRequestServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -29,7 +29,7 @@ public class BookInfoServlet extends HttpServlet {
 
 		// bookIdがnull、または空文字の場合は「お探しのページは見つかりませんでした」と表示する
 		if (bookId == null || "".equals(bookId)) {
-			request.getRequestDispatcher("WEB-INF/jsp/bookInfo.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/rentalRequest.jsp").forward(request, response);
 			return;
 		}
 
@@ -39,13 +39,13 @@ public class BookInfoServlet extends HttpServlet {
 
 		// bookがnullの時は「お探しのページは見つかりませんでした」と表示する
 		if (book == null) {
-			request.getRequestDispatcher("WEB-INF/jsp/bookInfo.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/rentalRequest.jsp").forward(request, response);
 			return;
 		}
 
-		// bookをリクエストにセットし、bookInfoへフォワードする
+		// bookをリクエストにセットし、rentalRequestへフォワードする
 		request.setAttribute("book", book);
-		request.getRequestDispatcher("WEB-INF/jsp/bookInfo.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/rentalRequest.jsp").forward(request, response);
 		return;
 	}
 
