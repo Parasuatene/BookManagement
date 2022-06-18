@@ -83,6 +83,14 @@ public class SignupServlet extends HttpServlet {
 		}
 
 
+		// TODO: ハッシュ値への変換処理
+//		try {
+//			// パスワードをハッシュ値に変換する
+//			password = HashGenerator.getHash(password);
+//		} catch (NoSuchAlgorithmException e) {
+//			e.printStackTrace();
+//		}
+
 		// ユーザーインスタンスの生成
 		User user = new User();
 		user.setId(loginId);
@@ -96,6 +104,7 @@ public class SignupServlet extends HttpServlet {
 		int result = userService.addUser(user);
 
 		// 一意制約違反の場合はエラーメッセージと共にsignup.jspにフォワードする
+		// TODO: マジックナンバーになっているため、23505をEnumで扱いたい
 		if (result == 23505) {
 			errorMessages.add("入力されたログインIDは既に存在しています");
 			request.setAttribute("errorMessages", errorMessages);
@@ -103,9 +112,9 @@ public class SignupServlet extends HttpServlet {
 			return;
 		}
 
-		// 問題なかった場合はSignupCompleteServletにリダイレクト
 		response.sendRedirect("signupComplete");
 		return;
+
 	}
 
 }
