@@ -2,14 +2,20 @@ package controller;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dataaccess.value.User;
 import debugger.PrintChecker;
+import myapi.HashGenerator;
+import service.UserService;
 
 /**
  * ログイン管理クラス
@@ -30,21 +36,55 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// パラメータの取得
 		String loginId = request.getParameter("login_id");
 		String password = request.getParameter("password");
 
-		// // ログインIDやパスワードが条件を満たしていない場合はsignup.jspにフォワード
-		// TODO: データベースとの照合処理
-		if ("".equals(loginId) || "".equals(password)) {
-			PrintChecker.print("login", "ログイン画面に戻す");
+
+		// エラーメッセージの格納用
+		List<String> errorMessages = new ArrayList<>();
+
+		if (loginId == null || "".equals(loginId)) {
+			errorMessages.add("ログインIDが入力されていません");
+		}
+
+		if (password == null || "".equals(password)) {
+			errorMessages.add("パスワードが入力されていません");
+		}
+
+		// 入力されていない場合はログインページにフォワードする
+		if (!errorMessages.isEmpty()) {
+			request.setAttribute("errorMessages", errorMessages);
 			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 			return;
 		}
 
+
+		// ログインID・パスワードの組み合わせがDBに存在するかを確認する
+		UserService userService = new UserService();
+		// パスワードをハッシュ値に変換
+		password = HashGenerator.getHash(password);
+		User user = userService.getUserByIdAndPassword(loginId, password);
+
+		// userがnullの時はログイン処理に失敗したとき
+		if (user == null) {
+			errorMessages.add("ログインID、またはパスワードに誤りがあります");
+			request.setAttribute("errorMessages", errorMessages);
+			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
+			return;
+		}
+
+		// ログインに成功した場合は、ログインIDと権限をセッションに保持し、書籍一覧画面に移動する
+		HttpSession session = request.getSession();
+		session.setAttribute("id", user.getId());
+		session.setAttribute("authority", user.getAuthority());
+
 		// ログインに成功した場合は、書籍一覧画面に移動する
-		PrintChecker.print("login", "書籍一覧画面に移動");
-		request.getRequestDispatcher("WEB-INF/jsp/home.jsp").forward(request, response);
+		PrintChecker.print("LoginServlet", "ログインに成功しました");
+		response.sendRedirect("home");
 		return;
 	}
 
