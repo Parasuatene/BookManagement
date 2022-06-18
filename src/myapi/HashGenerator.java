@@ -17,10 +17,14 @@ public class HashGenerator {
 	 * @return ハッシュ値
 	 * @throws NoSuchAlgorithmException
 	 */
-	public static String getHash(String text) throws NoSuchAlgorithmException {
-		// SHA3-256（SHA-3）
-		MessageDigest sha3_256 = MessageDigest.getInstance("SHA3-256");
-		byte[] sha3_256_result = sha3_256.digest("aa".getBytes());
-		return String.format("%040x", new BigInteger(1, sha3_256_result));
+	public static String getHash(String text) {
+		try {
+			// SHA3-256（SHA-3）
+			MessageDigest sha3_256 = MessageDigest.getInstance("SHA3-256");
+			byte[] sha3_256_result = sha3_256.digest("aa".getBytes());
+			return String.format("%040x", new BigInteger(1, sha3_256_result));
+		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

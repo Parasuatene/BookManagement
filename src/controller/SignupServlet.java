@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dataaccess.value.User;
+import myapi.HashGenerator;
 import myapi.RegexManager;
 import service.UserService;
 
@@ -83,13 +84,8 @@ public class SignupServlet extends HttpServlet {
 		}
 
 
-		// TODO: ハッシュ値への変換処理
-//		try {
-//			// パスワードをハッシュ値に変換する
-//			password = HashGenerator.getHash(password);
-//		} catch (NoSuchAlgorithmException e) {
-//			e.printStackTrace();
-//		}
+		// パスワードをハッシュ値に変換する
+		password = HashGenerator.getHash(password);
 
 		// ユーザーインスタンスの生成
 		User user = new User();
