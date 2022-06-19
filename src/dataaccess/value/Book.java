@@ -33,6 +33,11 @@ public class Book {
 	private String discription;
 
 	/**
+	 * 貸出管理クラス
+	 */
+	private RentalControl rentalControl;
+
+	/**
 	 * @return id
 	 */
 	public int getId() {
@@ -116,9 +121,23 @@ public class Book {
 		this.discription = discription;
 	}
 
+	/**
+	 * @return rentalControl
+	 */
+	public RentalControl getRentalControl() {
+		return rentalControl;
+	}
+
+	/**
+	 * @param rentalControl セットする rentalControl
+	 */
+	public void setRentalControl(RentalControl rentalControl) {
+		this.rentalControl = rentalControl;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", publisher=" + publisher + ", imgPath="
-				+ imgPath + ", discription=" + discription + "]";
+				+ imgPath + ", discription=" + discription + ", rentalControl.id=" + rentalControl.getId() + "]";
 	}
 }
