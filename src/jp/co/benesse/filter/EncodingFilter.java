@@ -1,4 +1,4 @@
-package filter;
+package jp.co.benesse.filter;
 
 import java.io.IOException;
 

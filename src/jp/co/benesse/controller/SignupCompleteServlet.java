@@ -1,4 +1,4 @@
-package controller;
+package jp.co.benesse.controller;
 
 import java.io.IOException;
 

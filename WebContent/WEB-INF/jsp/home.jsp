@@ -16,15 +16,22 @@
 
 		<!-- TODO: 後ほど修正する -->
 		<c:forEach var="book" items="${bookList}">
-				<div class="book_list">
-					<h3>${book.title}</h3>
-					<p>${book.author}</p>
-					<p>${book.publisher}</p>
-					<p>${book.imgPath}</p>
-					<p>${book.discription}</p>
-					<a href="bookInfo?id=${book.id}"></a>
-				</div>
-				<br>
+			<c:set var="start" value="${book.rentalControl.startDate}"/>
+			<c:set var="schedule" value="${book.rentalControl.scheduleDate}"/>
+			<c:set var="end" value="${book.rentalControl.endDate}"/>
+			<div class="book_list">
+				<c:if test="${not empty start and not empty schedule and empty end}">
+					<p>貸出中: 返却予定日（${schedule}）</p>
+				</c:if>
+				<h3>${book.title}</h3>
+				<p>${book.author}</p>
+				<p>${book.publisher}</p>
+				<p>${book.imgPath}</p>
+				<p>${book.discription}</p>
+				<a href="bookInfo?id=${book.id}"></a>
+				<p>rental.id=${book.rentalControl.id}</p>
+			</div>
+			<br>
 		</c:forEach>
 	</body>
 </html>

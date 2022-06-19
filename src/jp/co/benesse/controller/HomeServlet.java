@@ -1,4 +1,4 @@
-package controller;
+package jp.co.benesse.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dataaccess.value.Book;
-import service.BookService;
+import jp.co.benesse.dataaccess.value.Book;
+import jp.co.benesse.service.BookService;
 
 /**
  * Servlet implementation class HomeServlet

@@ -1,11 +1,11 @@
-package dataaccess.dao;
+package jp.co.benesse.dataaccess.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dataaccess.value.User;
+import jp.co.benesse.dataaccess.value.User;
 
 /**
  * UserテーブルのDAO

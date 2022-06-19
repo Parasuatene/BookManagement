@@ -1,10 +1,10 @@
-package service;
+package jp.co.benesse.service;
 
 import java.sql.Connection;
 
-import dataaccess.dao.UserDAO;
-import dataaccess.db.ConnectionManager;
-import dataaccess.value.User;
+import jp.co.benesse.dataaccess.dao.UserDAO;
+import jp.co.benesse.dataaccess.db.ConnectionManager;
+import jp.co.benesse.dataaccess.value.User;
 
 public class UserService {
 

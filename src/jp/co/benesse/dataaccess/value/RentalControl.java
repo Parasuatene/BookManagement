@@ -1,4 +1,4 @@
-package dataaccess.value;
+package jp.co.benesse.dataaccess.value;
 
 import java.sql.Date;
 

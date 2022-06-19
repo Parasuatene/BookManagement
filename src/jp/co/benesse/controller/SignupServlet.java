@@ -1,4 +1,4 @@
-package controller;
+package jp.co.benesse.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dataaccess.value.User;
+import jp.co.benesse.dataaccess.value.User;
+import jp.co.benesse.service.UserService;
 import myapi.HashGenerator;
 import myapi.RegexManager;
-import service.UserService;
 
 /**
  * アカウント登録画面

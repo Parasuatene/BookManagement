@@ -1,4 +1,4 @@
-package dataaccess.dao;
+package jp.co.benesse.dataaccess.dao;
 
 import java.sql.Connection;
 

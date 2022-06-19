@@ -1,4 +1,4 @@
-package dataaccess.db;
+package jp.co.benesse.dataaccess.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

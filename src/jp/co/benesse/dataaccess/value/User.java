@@ -1,4 +1,4 @@
-package dataaccess.value;
+package jp.co.benesse.dataaccess.value;
 
 /**
  * ユーザー情報を操作するクラス

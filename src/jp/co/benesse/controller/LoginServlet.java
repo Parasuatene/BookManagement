@@ -1,4 +1,4 @@
-package controller;
+package jp.co.benesse.controller;
 
 
 import java.io.IOException;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dataaccess.value.User;
 import debugger.PrintChecker;
+import jp.co.benesse.dataaccess.value.User;
+import jp.co.benesse.service.UserService;
 import myapi.HashGenerator;
-import service.UserService;
 
 /**
  * ログイン管理クラス
@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// ログインに成功した場合は、ログインIDと権限をセッションに保持し、書籍一覧画面に移動する
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(true);
 		session.setAttribute("id", user.getId());
 		session.setAttribute("authority", user.getAuthority());
 
