@@ -26,11 +26,14 @@
 				<p>${book.publisher}</p>
 				<p>${book.imgPath}</p>
 				<p>${book.discription}</p>
-				<button onclick="location.href='bookInfo?id=${book.id}'">戻る</button>
-				<!-- TODO: 申請する際は申請情報をPOSTするようにする -->
-				<!-- <button onclick="location.href='rentalComplete'">申請</button> -->
 				<form action="rentalComplete" method="post">
-					<input type="hidden" name="rental_request" value="${book}">
+					貸出開始日
+					<input type="date" name="start_date" required="required">
+					返却予定日
+					<input type="date" name="schedule_date" required="required">
+					<br>
+					<button onclick="location.href='bookInfo?id=${book.id}'">戻る</button>
+					<input type="hidden" name="book_id" value="${book.id}">
 					<input type="submit" value="申請">
 				</form>
 			</div>
