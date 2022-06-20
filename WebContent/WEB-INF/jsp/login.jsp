@@ -17,14 +17,15 @@
 				<br>
 			</c:forEach>
 			<form class="login_container" action="login" method="post">
-				<!-- <p id="error_message">ログイン、またはパスワードに誤りがあります</p> -->
-				<p><input type="text" name="login_id" placeholder="ログインID"></p>
-				<p><input type="password" name="password" placeholder="パスワード"></p>
+				<!-- <label for="error_message">＊ログイン、またはパスワードに誤りがあります</label> -->
+				<label for="login_id">ログインID</label><br>
+				<p><input type="text" name="login_id"></p>
+				<label for="password">パスワード</label><br>
+				<p><input type="password" name="password"></p>
 				<p><input type="submit" value="ログイン"></p>
 			</form>
 			<div class="account_create">
 				<a href="signup">新規アカウント作成</a>
 			</div>
-		</div>
 	</body>
 </html>
