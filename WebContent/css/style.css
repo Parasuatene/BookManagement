@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+
+/* ============================= */
+/* ログイン周り */
+/* ============================= */
+.login {
+	width: 400px;
+	margin: 30px auto;
+  }
+
+.login_header, .login p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.login_header {
+	padding: 45px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.login_container {
+	border-radius: 10px;
+	background: #e8e8e8;
+	padding: 12px;
+}
+
+.login p {
+	padding: 12px;
+}
+
+.login input {
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ebebeb;
+	padding: 16px;
+	outline: 0;
+	font-size: 0.95em;
+}
+
+.login input[type="login_id"],
+.login input[type="password"] {
+	background: #fff;
+	border-color: #bbb;
+	color: #555;
+}
+
+.login input[type="login_id"]:focus,
+.login input[type="password"]:focus {
+	border-color: #888;
+}
+
+.login input[type="submit"]:hover {
+	background: rgb(127, 0, 225);
+}
+  
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+	border-color: rgb(139, 0, 246);
+}
+
+.book_list, .book_info {
+	position: relative;
+	background-color: #f1f1f1;
+	margin-left: auto;
+	margin-right: auto;
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+	width: 600px;
+}
+
+.book_list:hover {
+	background-color: #e4e4e4;
+	margin-left: auto;
+	margin-right: auto;
+    border: 2px solid #b7b7b7;
+    border-radius: 10px;
+	width: 600px;
+}
+
+.book_list a {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+}
+
+.book_list a:hover{
+	background-color: #e4e4e4;
+	opacity: 0.3;
+    border-radius: 10px;
+}
