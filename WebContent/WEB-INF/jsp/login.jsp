@@ -10,19 +10,21 @@
 	</head>
 	<body>
 		<div class="login">
-			<h1 class="login_header">サインイン</h1>
+			<h3 class="login_header">サインイン</h3>
+			<!-- TODO: エラーメッセージを下のpタグに差し込む -->
 			<c:forEach var="errorMessage" items="${errorMessages}">
 				<span class="errorMsg"> <c:out value="${errorMessage}" /></span>
 				<br>
 			</c:forEach>
-			<div>
-				<form action="login" method="post" class="login_container">
-					<p><input type="text" name="login_id" placeholder="ログインID"></p>
-					<p><input type="password" name="password" placeholder="パスワード"></p>
-					<p><input type="submit" value="ログイン"></p>
-				</form>
+			<form class="login_container" action="login" method="post">
+				<!-- <p id="error_message">ログイン、またはパスワードに誤りがあります</p> -->
+				<p><input type="text" name="login_id" placeholder="ログインID"></p>
+				<p><input type="password" name="password" placeholder="パスワード"></p>
+				<p><input type="submit" value="ログイン"></p>
+			</form>
+			<div class="account_create">
+				<a href="signup">新規アカウント作成</a>
 			</div>
-			アカウント作成は<a href="signup">こちら</a>
 		</div>
 	</body>
 </html>

@@ -9,10 +9,10 @@ body {
 
 
 /* ============================= */
-/* ログイン周り */
+/* 開始：ログイン周り */
 /* ============================= */
 .login {
-	width: 400px;
+	width: 320px;
 	margin: 30px auto;
   }
 
@@ -20,17 +20,18 @@ body {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
 .login_header {
-	padding: 45px;
-	font-size: 1.5em;
-	font-weight: bold;
+	padding: 20px 0 0 0;
 	text-align: center;
+	color: rgb(49, 49, 49);
 }
 
 .login_container {
 	border-radius: 10px;
 	background: #e8e8e8;
 	padding: 12px;
+	box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
 }
 
 .login p {
@@ -45,21 +46,32 @@ body {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ebebeb;
-	padding: 16px;
+	padding: 10px;
+	margin: 5px 0;
 	outline: 0;
-	font-size: 0.95em;
 }
 
-.login input[type="login_id"],
-.login input[type="password"] {
+#error_message {
+	color: rgb(194, 0, 0);
+	font-size: 70%;
+	padding: 10px 0px 0px 15px;
+}
+
+.login input[type="text"], .login input[type="password"] {
 	background: #fff;
 	border-color: #bbb;
 	color: #555;
 }
 
-.login input[type="login_id"]:focus,
-.login input[type="password"]:focus {
+.login input[type="text"]:focus, .login input[type="password"]:focus {
 	border-color: #888;
+}
+
+.login input[type="submit"] {
+	background: #961BF6;
+	border-color: transparent;
+	color: #fff;
+	cursor: pointer;
 }
 
 .login input[type="submit"]:hover {
@@ -70,6 +82,26 @@ body {
 .login input[type="submit"]:focus {
 	border-color: rgb(139, 0, 246);
 }
+
+.account_create {
+	padding: 15px 10px;
+	text-align: left;
+	font-size: 80%;
+}
+
+.account_create a {
+	color: #b1b1b1
+}
+
+.account_create a:hover {
+	color : #828282;
+}
+
+/* ============================= */
+/* 終了：ログイン周り */
+/* ============================= */
+
+
 
 .book_list, .book_info {
 	position: relative;
