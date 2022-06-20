@@ -11,8 +11,16 @@
 	<body>
 		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
-		<c:out value="${id}" />
-		<c:out value="${authority}" />
+
+		<c:if test="${empty sessionScope.id}">
+			ログインするボタンを作る
+		</c:if>
+
+		<c:if test="${not empty sessionScope.id}">
+			<form action="rentalList" method="get">
+				<input type="submit" value="${sessionScope.id}さんの貸出中書籍リスト">
+			</form>
+		</c:if>
 
 		<!-- TODO: 後ほど修正する -->
 		<c:forEach var="book" items="${bookList}">

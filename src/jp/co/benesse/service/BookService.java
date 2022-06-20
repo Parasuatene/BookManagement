@@ -41,6 +41,22 @@ public class BookService {
 	}
 
 	/**
+	 * ユーザーの貸出中書籍リストを取得する
+	 * @param argUserId
+	 * @return
+	 */
+	public List<Book> getRentalBookListByUserId(String argUserId) {
+		ConnectionManager connectionManager = new ConnectionManager();
+		try {
+			Connection connection = connectionManager.getConnection();
+			BookDAO bookDAO = new BookDAO(connection);
+			return bookDAO.selectRentalBookListByUserId(argUserId);
+		} finally {
+			connectionManager.closeConnection();
+		}
+	}
+
+	/**
 	 * 指定した書籍IDが貸出中かどうかを確認する
 	 * @param argId
 	 * @return trueは貸出中、falseは貸出されていないことを示す
