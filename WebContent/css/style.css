@@ -4,14 +4,14 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans Japanese", sans-serif;
 }
 
 
 /* ============================= */
 /* ログイン周り */
 /* ============================= */
-.login, .signup{
+.login, .signup {
 	width: 320px;
 	margin: 30px auto;
   }
@@ -148,6 +148,28 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	padding: 0 6px 1px 6px;
 	border-radius: 1.5em;
 	margin-left:2em;
+}
+
+.signup_complete {
+	margin: 50px 200px 0 200px;
+	text-align: center;
+	padding: 1rem 2rem;
+}
+
+.signup_complete h2 {
+	font-size: 35px;
+}
+
+.signup_complete p {
+	font-size: 90%;
+}
+
+.signup_complete a {
+	color: #437be3;
+}
+
+.signup_complete a:hover {
+	color: #003598;
 }
 
 .book_list, .book_info {
