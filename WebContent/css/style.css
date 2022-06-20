@@ -9,36 +9,35 @@ body {
 
 
 /* ============================= */
-/* 開始：ログイン周り */
+/* ログイン周り */
 /* ============================= */
-.login {
+.login, .signup{
 	width: 320px;
 	margin: 30px auto;
   }
 
-.login_header, .login p {
+.login_header, .signup_header {
 	margin-top: 0;
 	margin-bottom: 0;
-}
-
-.login_header {
 	padding: 20px 0 0 0;
 	text-align: center;
 	color: rgb(49, 49, 49);
 }
 
-.login_container {
+.login_container, .signup_container {
 	border-radius: 10px;
 	background: #e8e8e8;
 	padding: 12px;
 	box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
 }
 
-.login p {
+.login p, .signup p {
+	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0px 15px 5px 15px;
 }
 
-.login input {
+.login input, .signup input:not(.last_name, .first_name) {
 	border-radius: 10px;
 	box-sizing: border-box;
 	display: block;
@@ -51,17 +50,48 @@ body {
 	outline: 0;
 }
 
-.login input[type="text"], .login input[type="password"] {
+.signup input.last_name {
+	float: left;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	width: 48%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ebebeb;
+	padding: 10px;
+	margin: 5px 0;
+	outline: 0;
+}
+
+.signup input.first_name {
+	float: right;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	width: 48%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ebebeb;
+	padding: 10px;
+	margin: 5px 0;
+	outline: 0;
+}
+
+.login input[type="text"], .login input[type="password"],
+.signup input[type="text"], .signup input[type="password"] {
 	background: #fff;
 	border-color: #bbb;
 	color: #555;
 }
 
-.login input[type="text"]:focus, .login input[type="password"]:focus {
+.login input[type="text"]:focus, .login input[type="password"]:focus,
+.signup input[type="text"]:focus, .signup input[type="password"]:focus {
 	border-color: #888;
 }
 
-.login input[type="submit"] {
+.login input[type="submit"],
+.signup input[type="submit"] {
 	font-size: 80%;
 	margin: 25px 0px 20px 0px;
 	background: #961BF6;
@@ -70,12 +100,14 @@ body {
 	cursor: pointer;
 }
 
-.login input[type="submit"]:hover {
+.login input[type="submit"]:hover,
+.signup input[type="submit"]:hover {
 	background: rgb(127, 0, 225);
 }
   
 /* Buttons' focus effect */
-.login input[type="submit"]:focus {
+.login input[type="submit"]:focus,
+.signup input[type="submit"]:focus {
 	border-color: rgb(139, 0, 246);
 }
 
@@ -93,24 +125,30 @@ body {
 	color : #828282;
 }
 
-label[for="error_message"]{
+label[for="error_message"] {
 	color: rgb(194, 0, 0);
 	font-size: 70%;
-	padding: 10px 0px 0px 15px;
+	margin: 5px 10px 0px 17px;
+	display: inline-block;
 }
 
-label[for="login_id"], label[for="password"]{
+label[for="login_id"], label[for="password"], label[for="full_name"]{
     display: inline-block;
     color: rgb(84, 84, 84);
     font-size: 80%;;
-    margin: 10px 0px 0px 18px;
+    margin: 15px 0px 0px 18px;
 }
 
-/* ============================= */
-/* 終了：ログイン周り */
-/* ============================= */
-
-
+/* 必須ボタン */
+.required::after {
+	content: "必須";
+	color: #ffffff;
+	background: rgb(0, 158, 126);
+	font-size: 0.3em;
+	padding: 0 6px 1px 6px;
+	border-radius: 1.5em;
+	margin-left:2em;
+}
 
 .book_list, .book_info {
 	position: relative;
