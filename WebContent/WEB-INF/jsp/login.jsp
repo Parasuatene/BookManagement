@@ -4,24 +4,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>ログイン</title>
 	</head>
 	<body>
-		<div align="center">
-			<h1>サインイン</h1>
+		<div class="login">
+			<h1 class="login_header">サインイン</h1>
 			<c:forEach var="errorMessage" items="${errorMessages}">
 				<span class="errorMsg"> <c:out value="${errorMessage}" /></span>
 				<br>
 			</c:forEach>
 			<div>
-				<form action="login" method="post">
-					<p>ログインID</p>
-					<input type="text" name="login_id">
-					<p>パスワード</p>
-					<input type="password" name="password">
-					<br>
-					<input type="submit" value="ログイン">
+				<form action="login" method="post" class="login_container">
+					<p><input type="text" name="login_id" placeholder="ログインID"></p>
+					<p><input type="password" name="password" placeholder="パスワード"></p>
+					<p><input type="submit" value="ログイン"></p>
 				</form>
 			</div>
 			アカウント作成は<a href="signup">こちら</a>
