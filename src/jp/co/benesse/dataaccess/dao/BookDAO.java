@@ -20,6 +20,38 @@ public class BookDAO extends BaseDAO {
 		super(connection);
 	}
 
+	public int insert(Book book) {
+		PreparedStatement preparedStatement = null;
+		try {
+			// SQLの定義
+			String sql = "INSERT INTO t_book "
+						 + "(title, author, publisher, img_path, discription) "
+						 + "VALUES (?,?,?,?,?)";
+			// SQLの作成
+			preparedStatement = getConnection().prepareStatement(sql);
+			// 値の設定
+			preparedStatement.setString(1, book.getTitle());
+			preparedStatement.setString(2, book.getAuthor());
+			preparedStatement.setString(3, book.getPublisher());
+			preparedStatement.setString(4, book.getImgPath());
+			preparedStatement.setString(5, book.getDiscription());
+			// SQLの実行
+			int result = preparedStatement.executeUpdate();
+			return result;
+		} catch (SQLException e) {
+			// TODO: 例外処理のラッパークラスを作成する（まさおに聞く）
+			return Integer.parseInt(e.getSQLState());
+		} finally {
+			if (preparedStatement != null) {
+				try {
+					preparedStatement.close();
+				} catch (SQLException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
+	}
+
 	/**
 	 * Bookテーブルから全てのデータを取得する
 	 * @return bookテーブル内の全てのデータ

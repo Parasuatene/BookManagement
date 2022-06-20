@@ -10,6 +10,27 @@ import jp.co.benesse.dataaccess.value.Book;
 public class BookService {
 
 	/**
+	 * データベースに新規書籍を追加する
+	 * @return 追加に成功すれば1、そうでなければ0を返す
+	 */
+	public int addBook(Book book) {
+		ConnectionManager connectionManager = new ConnectionManager();
+		try {
+			Connection connection = connectionManager.getConnection();
+			BookDAO bookDAO = new BookDAO(connection);
+			int result = bookDAO.insert(book);
+			connectionManager.commit();
+			System.out.println("コミットしました");
+			return result;
+		} catch (RuntimeException e) {
+			connectionManager.rollback();
+			throw e;
+		} finally {
+			connectionManager.closeConnection();
+		}
+	}
+
+	/**
 	 * データベースから書籍一覧を取得する
 	 * @return データベース内の書籍リスト
 	 */

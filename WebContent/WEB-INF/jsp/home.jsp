@@ -28,7 +28,7 @@
 			<c:set var="schedule" value="${book.rentalControl.scheduleDate}"/>
 			<c:set var="end" value="${book.rentalControl.endDate}"/>
 			<div class="book_list">
-				<c:if test="${not empty start and not empty schedule and empty end}">
+				<c:if test="${not empty start and empty end}">
 					<p>貸出中: 返却予定日（${schedule}）</p>
 				</c:if>
 				<h3>${book.title}</h3>
