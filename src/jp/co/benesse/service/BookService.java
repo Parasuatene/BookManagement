@@ -41,6 +41,22 @@ public class BookService {
 	}
 
 	/**
+	 * 指定したレンタルIDに該当する書籍情報を取得する
+	 * @param argId
+	 * @return IDに該当する書籍。または該当しない場合はnullを返す。
+	 */
+	public Book getBookByRentalId(int argRentalId) {
+		ConnectionManager connectionManager = new ConnectionManager();
+		try {
+			Connection connection = connectionManager.getConnection();
+			BookDAO bookDAO = new BookDAO(connection);
+			return bookDAO.selectByRentalId(argRentalId);
+		} finally {
+			connectionManager.closeConnection();
+		}
+	}
+
+	/**
 	 * ユーザーの貸出中書籍リストを取得する
 	 * @param argUserId
 	 * @return

@@ -29,4 +29,26 @@ public class RentalControlService {
 		}
 	}
 
+	/**
+	 * 指定したレンタルIDのRentalControlテーブルの貸出終了日を更新する
+	 * @param rentalControl
+	 * @return
+	 */
+	public int updateEndDate(RentalControl rentalControl) {
+		ConnectionManager connectionManager = new ConnectionManager();
+		try {
+			Connection connection = connectionManager.getConnection();
+			RentalControlDAO rentalControlDAO = new RentalControlDAO(connection);
+			int result = rentalControlDAO.update(rentalControl);
+			connectionManager.commit();
+			System.out.println("コミットしました");
+			return result;
+		} catch (RuntimeException e) {
+			connectionManager.rollback();
+			throw e;
+		} finally {
+			connectionManager.closeConnection();
+		}
+	}
+
 }

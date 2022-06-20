@@ -14,6 +14,7 @@
 
 		<c:if test="${empty requestScope.rentalBookList}">
 			現在、"${sessionScope.id}"さんに貸出中の書籍はございません。
+			<button onclick="location.href='home'">書籍一覧に戻る</button>
 		</c:if>
 
 		<c:if test="${not empty requestScope.rentalBookList}">
