@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-    font-family: "Noto Sans Japanese", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
 	color: rgb(49, 49, 49);
 	background-color: #f5f5f5;
 }
@@ -258,7 +258,7 @@ nav ul {
 nav ul li{
     display: inline-block;
 	height: 100%;
-    width: 120px; /* ここで項目の幅を指定します */
+    width: 120%; /* ここで項目の幅を指定します */
 }
 
 nav ul li a {
@@ -285,13 +285,18 @@ nav li:hover{
 	border: 1px solid #dddddd;
 }
 
+.book_list .image img:hover {
+	border: 1px solid #a5a5a5;
+}
+
 .book_info {
 	margin: 30px 30px 30px 30px;
+	width: 2600px
 }
 
 .book_info h3 {
 	margin-top: 0;
-	margin-bottom: 1px;
+	margin-bottom: 5px;
 	/* 指定した行数以上の場合は ... で省略する */
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
@@ -306,6 +311,14 @@ nav li:hover{
 .book_info label[for="publisher"] {
 	margin-left: 20px;
 	font-size: 11px;
+}
+
+.book_info .rental_status {
+	font-size: 11px;
+	margin-top: 0;
+	margin-bottom: 6px;
+	font-weight: bold;
+	color: rgb(194, 0, 0);
 }
 
 .book_info .discription {
@@ -341,11 +354,13 @@ nav li:hover{
 	width: 800px;
 }
 
-/* div自体をボタンに見立てる */
-.book_list a {
-	position:absolute;
-	top:0;
-	left:0;
-	height:100%;
-	width:100%;
+.book_list h3 a {
+	transition: color 0.3s;
+	text-decoration: none;  /* 下線を取り消す */
+	color: rgb(49, 49, 49);
+}
+
+.book_list h3 a:hover {
+	color : #961BF6;
+	text-decoration: underline;
 }
