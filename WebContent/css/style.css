@@ -3,6 +3,10 @@
 /* フォントのインポート */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
+
+/* ============================= */
+/* デフォルトCSSの上書き */
+/* ============================= */
 body {
     font-family: "Noto Sans JP", sans-serif;
 	color: rgb(49, 49, 49);
@@ -275,12 +279,12 @@ nav li:hover{
 /* ============================= */
 /* ホーム画面周り */
 /* ============================= */
-.book_list .image, .book_panel .image {
-	width: 700px;  /* 画像サイズ指定 */
-	margin: 30px 0 auto 30px;  /* 画像を中央に寄せる */
+.book_list .image {
+	width: 140px;  /* 画像サイズ指定 */
+	margin: 30px 30px auto 30px;  /* 画像を中央に寄せる */
 }
 
-.book_list .image img, .book_panel .image img {
+.book_list .image img {
 	width: 100%;
 	height: auto;
 	border: 1px solid #dddddd;
@@ -290,12 +294,12 @@ nav li:hover{
 	border: 1px solid #a5a5a5;
 }
 
-.book_info {
+.book_list .book_info {
+	width: 500px;
 	margin: 30px 30px 30px 30px;
-	width: 2600px
 }
 
-.book_list .book_info h3 {
+.book_list h3 {
 	margin-top: 0;
 	margin-bottom: 5px;
 	/* 指定した行数以上の場合は ... で省略する */
@@ -305,18 +309,18 @@ nav li:hover{
 	overflow: hidden;
 }
 
-.book_list .book_info label[for="author"] {
+.book_list label[for="author"] {
 	font-size: 11px;
 	color:rgb(146, 146, 146);
 }
 
-.book_list .book_info label[for="publisher"] {
+.book_list label[for="publisher"] {
 	margin-left: 20px;
 	font-size: 11px;
 	color:rgb(146, 146, 146);
 }
 
-.book_list .book_info .rental_status {
+.book_list .rental_status {
 	font-size: 11px;
 	margin-top: 0;
 	margin-bottom: 6px;
@@ -324,7 +328,7 @@ nav li:hover{
 	color: rgb(194, 0, 0);
 }
 
-.book_list .book_info .discription {
+.book_list .discription {
 	font-size: 12px;
 	/* 指定した行数以上の場合は ... で省略する */
 	display: -webkit-box;
@@ -338,20 +342,6 @@ nav li:hover{
 	margin-top: 50px;
 	width: 800px;
 	height: 280px;
-	position: relative;
-	display: flex;  /* 横並びにする */
-	background-color: #ffffff;
-	margin-left: auto;
-	margin-right: auto;
-    border: 1.5px solid #dddddd;
-    border-radius: 15px;
-	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
-}
-
-.book_panel {
-	margin-top: 50px;
-	width: 800px;
-	height: auto;
 	position: relative;
 	display: flex;  /* 横並びにする */
 	background-color: #ffffff;
@@ -384,7 +374,7 @@ nav li:hover{
 
 
 /* ============================= */
-/* 書籍情報周り */
+/* 貸出申請ボタン */
 /* ============================= */
 .btn_rental_request a {
 	text-decoration: none;
@@ -408,42 +398,11 @@ nav li:hover{
     background: #006f77;
 }
 
-.book_panel .book_info h3 {
-	margin-top: 0;
-	margin-bottom: 10px;
-	font-size: 22px;
-}
-
-.book_panel .book_info label[for="author"] {
-	font-size: 14px;
-	color:rgb(146, 146, 146);
-}
-
-.book_panel .book_info label[for="publisher"] {
-	margin-left: 20px;
-	font-size: 14px;
-	color:rgb(146, 146, 146);
-}
-
-.book_panel .book_info .rental_status {
-	font-size: 11px;
-	margin-top: 0;
-	margin-bottom: 6px;
-	font-weight: bold;
-	color: rgb(194, 0, 0);
-}
-
-.book_panel .book_info .discription {
-	font-size: 14px;
-	line-height: 25px;
-	margin-bottom: 30px;
-}
-
 
 /* ============================= */
 /* 書籍貸出申請画面 */
 /* ============================= */
-.rental_book_panel {
+.book_info_panel {
 	margin-top: 50px;
 	width: 800px;
 	height: auto;
@@ -456,57 +415,58 @@ nav li:hover{
 	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
 }
 
-.rental_book_panel .book_info {
+.book_info_panel .book_info {
 	display: flex;  /* 横並びにする */
+	margin: 40px 20px 40px 30px;
 }
 
-.rental_book_panel .book_info .book_info_image {
+.book_info_panel .book_info .book_info_image {
     width: 200px;
     margin: 0px 0 auto 0;
 }
 
-.rental_book_panel .book_info .book_info_image img {
+.book_info_panel .book_info .book_info_image img {
 	width: 100%;
 	height: auto;
 	border: 1px solid #dddddd;
 }
 
 /* テキスト説明文 */
-.rental_book_panel .book_info_text {
+.book_info_panel .book_info_text {
 	width: 500px
 }
 
-.rental_book_panel .book_info .book_info_text {
+.book_info_panel .book_info .book_info_text {
 	margin: 0 30px 0 30px;
 }
 
-.rental_book_panel .book_info .book_info_text h3 {
+.book_info_panel .book_info .book_info_text h3 {
 	margin-top: 0;
 	margin-bottom: 10px;
 	font-size: 22px;
 }
 
-.rental_book_panel .book_info .book_info_text label[for="author"] {
+.book_info_panel .book_info .book_info_text label[for="author"] {
 	font-size: 14px;
 	color:rgb(146, 146, 146);
 }
 
-.rental_book_panel .book_info .book_info_text label[for="publisher"] {
+.book_info_panel .book_info .book_info_text label[for="publisher"] {
 	margin-left: 20px;
 	font-size: 14px;
 	color:rgb(146, 146, 146);
 }
 
-.rental_book_panel .book_info .book_info_text .discription {
+.book_info_panel .book_info .book_info_text .discription {
 	font-size: 14px;
 	line-height: 25px;
 	display: inline-block;
 }
 
-.rental_book_panel .input_date_container {
+.book_info_panel .input_date_container {
 	display: flex;
 }
 
-.rental_book_panel .input_date_container .shedule_date {
+.book_info_panel .input_date_container .shedule_date {
 	margin-left: 40px;
 }

@@ -22,18 +22,20 @@
 
 		<c:if test="${not empty book}">
 			<!-- ページが見つかった時の処理 -->
-			<div class="book_panel">
-	            <figure class="image">
-                   <img src="${book.imgPath}" alt="">
-            	</figure>
+			<div class="book_info_panel">
 				<div class="book_info">
-					<h3>${book.title}</h3>
-					<label for="author">${book.author}</label>
-					<label for="publisher">${book.publisher}</label>
-					<p>${book.discription}</p>
-	                <div class="btn_rental_request">
-	                    <a href="rentalRequest?id=${book.id}">貸出申請を行う</a>
-	                </div>
+					<figure class="book_info_image">
+						<img src="${book.imgPath}" alt="">
+					</figure>
+					<div class="book_info_text">
+						<h3>${book.title}</h3>
+						<label for="author">${book.author}</label>
+						<label for="publisher">${book.publisher}</label>
+						<p class="discription">${book.discription}</p>
+						<div class="btn_rental_request">
+							<a href="rentalRequest?id=${book.id}">貸出申請を行う</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</c:if>
