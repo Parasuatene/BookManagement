@@ -5,6 +5,8 @@
 
 body {
     font-family: "Noto Sans Japanese", sans-serif;
+	color: rgb(49, 49, 49);
+	background-color: #f5f5f5;
 }
 
 
@@ -240,57 +242,103 @@ nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
- 
+
 nav ul {
     margin: 0;
     padding: 0;
 }
- 
+
 nav ul li{
     display: inline-block;
 	height: 100%;
     width: 120px; /* ここで項目の幅を指定します */
 }
- 
+
 nav ul li a {
     text-decoration: none;  /* 下線を取り消す */
     color: rgb(255, 255, 255);
 }
- 
+
 nav li:hover{
     border-bottom: 3px solid #961BF6; /* 下線の太さや色を指定します */
 }
 
 
-.book_list, .book_info {
+/* ============================= */
+/* ホーム画面周り */
+/* ============================= */
+.book_list .image {
+	width: 700px;  /* 画像サイズ指定 */
+	margin: 30px 0 auto 30px;  /* 画像を中央に寄せる */
+}
+
+.book_list .image img {
+	width: 100%;
+	height: auto;
+	border: 1px solid #dddddd;
+}
+
+.book_info {
+	margin: 30px 30px 30px 30px;
+}
+
+.book_info h3 {
+	margin-top: 0;
+	margin-bottom: 1px;
+	/* 指定した行数以上の場合は ... で省略する */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;  /* 行数 */
+	overflow: hidden; 
+}
+
+.book_info label[for="author"] {
+	font-size: 11px;
+}
+
+.book_info label[for="publisher"] {
+	margin-left: 20px;
+	font-size: 11px;
+}
+
+.book_info .discription {
+	font-size: 12px;
+	/* 指定した行数以上の場合は ... で省略する */
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;  /* 行数 */
+    overflow: hidden; 
+	line-height: 19px;
+}
+
+.book_list {
+	margin-top: 50px;
+	width: 800px;
+	height: 280px;
 	position: relative;
-	background-color: #f1f1f1;
+	display: flex;  /* 横並びにする */
+	background-color: #ffffff;
 	margin-left: auto;
 	margin-right: auto;
-    border: 2px solid #d3d3d3;
-    border-radius: 10px;
-	width: 600px;
+    border: 1.5px solid #dddddd;
+    border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
 }
 
 .book_list:hover {
-	background-color: #e4e4e4;
+	background-color: #f6f6f6;
 	margin-left: auto;
 	margin-right: auto;
-    border: 2px solid #b7b7b7;
-    border-radius: 10px;
-	width: 600px;
+	border: 1.5px solid #cbcaca;
+    border-radius: 15px;
+	width: 800px;
 }
 
+/* div自体をボタンに見立てる */
 .book_list a {
 	position:absolute;
 	top:0;
 	left:0;
 	height:100%;
 	width:100%;
-}
-
-.book_list a:hover{
-	background-color: #e4e4e4;
-	opacity: 0.3;
-    border-radius: 10px;
 }
