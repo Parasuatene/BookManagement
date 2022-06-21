@@ -159,25 +159,25 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	margin-left:2em;
 }
 
-.signup_complete {
+.signup_complete, .not_found {
 	margin: 50px 200px 0 200px;
 	text-align: center;
 	padding: 1rem 2rem;
 }
 
-.signup_complete h2 {
+.signup_complete h2, .not_found h2 {
 	font-size: 35px;
 }
 
-.signup_complete p {
+.signup_complete p, .not_found p {
 	font-size: 90%;
 }
 
-.signup_complete a {
+.signup_complete a, .not_found a {
 	color: #437be3;
 }
 
-.signup_complete a:hover {
+.signup_complete a:hover, .not_found a:hover {
 	color: #003598;
 }
 
@@ -262,6 +262,7 @@ nav ul li{
 }
 
 nav ul li a {
+	font-size: 12px;
     text-decoration: none;  /* 下線を取り消す */
     color: rgb(255, 255, 255);
 }
@@ -274,12 +275,12 @@ nav li:hover{
 /* ============================= */
 /* ホーム画面周り */
 /* ============================= */
-.book_list .image {
+.book_list .image, .book_panel .image {
 	width: 700px;  /* 画像サイズ指定 */
 	margin: 30px 0 auto 30px;  /* 画像を中央に寄せる */
 }
 
-.book_list .image img {
+.book_list .image img, .book_panel .image img {
 	width: 100%;
 	height: auto;
 	border: 1px solid #dddddd;
@@ -294,7 +295,7 @@ nav li:hover{
 	width: 2600px
 }
 
-.book_info h3 {
+.book_list .book_info h3 {
 	margin-top: 0;
 	margin-bottom: 5px;
 	/* 指定した行数以上の場合は ... で省略する */
@@ -304,16 +305,18 @@ nav li:hover{
 	overflow: hidden;
 }
 
-.book_info label[for="author"] {
+.book_list .book_info label[for="author"] {
 	font-size: 11px;
+	color:rgb(146, 146, 146);
 }
 
-.book_info label[for="publisher"] {
+.book_list .book_info label[for="publisher"] {
 	margin-left: 20px;
 	font-size: 11px;
+	color:rgb(146, 146, 146);
 }
 
-.book_info .rental_status {
+.book_list .book_info .rental_status {
 	font-size: 11px;
 	margin-top: 0;
 	margin-bottom: 6px;
@@ -321,7 +324,7 @@ nav li:hover{
 	color: rgb(194, 0, 0);
 }
 
-.book_info .discription {
+.book_list .book_info .discription {
 	font-size: 12px;
 	/* 指定した行数以上の場合は ... で省略する */
 	display: -webkit-box;
@@ -335,6 +338,20 @@ nav li:hover{
 	margin-top: 50px;
 	width: 800px;
 	height: 280px;
+	position: relative;
+	display: flex;  /* 横並びにする */
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+    border: 1.5px solid #dddddd;
+    border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
+}
+
+.book_panel {
+	margin-top: 50px;
+	width: 800px;
+	height: auto;
 	position: relative;
 	display: flex;  /* 横並びにする */
 	background-color: #ffffff;
@@ -363,4 +380,61 @@ nav li:hover{
 .book_list h3 a:hover {
 	color : #961BF6;
 	text-decoration: underline;
+}
+
+
+/* ============================= */
+/* 書籍情報周り */
+/* ============================= */
+.btn_rental_request a {
+	text-decoration: none;
+	font-size: 12px;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px 25px;
+    color: #FFF;
+	font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #009DA7;
+}
+
+.btn_rental_request a:hover {
+    background: #006f77;
+}
+
+.book_panel .book_info h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 22px;
+}
+
+.book_panel .book_info label[for="author"] {
+	font-size: 14px;
+	color:rgb(146, 146, 146);
+}
+
+.book_panel .book_info label[for="publisher"] {
+	margin-left: 20px;
+	font-size: 14px;
+	color:rgb(146, 146, 146);
+}
+
+.book_panel .book_info .rental_status {
+	font-size: 11px;
+	margin-top: 0;
+	margin-bottom: 6px;
+	font-weight: bold;
+	color: rgb(194, 0, 0);
+}
+
+.book_panel .book_info .discription {
+	font-size: 14px;
+	line-height: 25px;
+	margin-bottom: 30px;
 }

@@ -12,28 +12,6 @@
 		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
-<%-- 		<c:if test="${empty sessionScope.id}">
-			ログインするボタンを作る
-		</c:if>
-
-		<c:if test="${not empty sessionScope.id}">
-			<form action="rentalList" method="get">
-				<input type="submit" value="${sessionScope.id}さんの貸出中書籍リスト">
-			</form>
-		</c:if>
-
-		<!-- TODO: 後ほど修正する -->
-		<c:if test="${empty sessionScope.id}">
-			ログインするボタンを作る
-		</c:if>
-
-		<c:if test="${not empty sessionScope.id}">
-			<form action="rentalList" method="get">
-				<input type="submit" value="${sessionScope.id}さんの貸出中書籍リスト">
-			</form>
-		</c:if> --%>
-
-		<!-- TODO: 後ほど修正する -->
 		<div class="body_container">
 			<c:forEach var="book" items="${bookList}">
 				<div class="book_list">
@@ -53,7 +31,6 @@
 						<label for="author">${book.author}</label>
 						<label for="publisher">${book.publisher}</label>
 						<p class="discription">${book.discription}</p>
-						<!-- <a href="bookInfo?id=${book.id}"></a> -->
 					</div>
 				</div>
 			</c:forEach>
