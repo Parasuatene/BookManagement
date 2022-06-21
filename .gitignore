@@ -51,4 +51,5 @@ dependency-reduced-pom.xml
 # 新規追加
 *.MF
 
-/Users/ryota-a/finalproduct/WebContent/html/*.html
+# 一旦追加
+*.html
