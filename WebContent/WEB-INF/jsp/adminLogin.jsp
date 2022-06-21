@@ -4,25 +4,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/adminStyle.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>管理者用ログイン</title>
 	</head>
 	<body>
-		<div align="center">
-			<h1>サインイン</h1>
-			<c:forEach var="errorMessage" items="${errorMessages}">
-				<span class="errorMsg"> <c:out value="${errorMessage}" /></span>
-				<br>
-			</c:forEach>
-			<div>
-				<form action="adminLogin" method="post">
-					<p>ログインID</p>
-					<input type="text" name="login_id">
-					<p>パスワード</p>
-					<input type="password" name="password">
-					<br>
-					<input type="submit" value="ログイン">
-				</form>
+		<div class="login">
+			<h3 class="login_header">管理者サインイン</h3>
+			<form class="login_container" action="adminLogin" method="post">
+				<%-- <c:set var="errorMessages" value="${errorMessages}"/> --%>
+				<c:if test="${not empty errorMessage}">
+					<label for="error_message">${errorMessage}</label>
+				</c:if>
+				<label for="login_id">ログインID</label><br>
+				<p><input type="text" name="login_id"></p>
+				<label for="password">パスワード</label><br>
+				<p><input type="password" name="password"></p>
+				<p><input type="submit" value="ログイン"></p>
+			</form>
+			<div class="account_create">
+				<a href="signup">新規アカウント作成</a>
 			</div>
 		</div>
 	</body>
