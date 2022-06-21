@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>アカウント登録完了</title>
 	</head>
 	<body>
-		<div align="center">
-			<h1>アカウント登録が完了しました！</h1>
-			サービスを利用する場合は、<a href="login">ログインページ</a>へお進みください
+		<div class="signup_complete">
+			<h2>アカウント登録が完了しました</h2>
+			<p>サービスを利用する場合は、<a href="login">ログインページ</a>へお進みください</p>
 		</div>
 	</body>
 </html>

@@ -4,40 +4,42 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans Japanese", sans-serif;
+	color: rgb(49, 49, 49);
+	background-color: #f5f5f5;
 }
 
 
 /* ============================= */
 /* ログイン周り */
 /* ============================= */
-.login {
-	width: 400px;
+.login, .signup {
+	width: 320px;
 	margin: 30px auto;
   }
 
-.login_header, .login p {
+.login_header, .signup_header {
 	margin-top: 0;
 	margin-bottom: 0;
-}
-.login_header {
-	padding: 45px;
-	font-size: 1.5em;
-	font-weight: bold;
+	padding: 20px 0 0 0;
 	text-align: center;
+	color: rgb(49, 49, 49);
 }
 
-.login_container {
+.login_container, .signup_container {
 	border-radius: 10px;
 	background: #e8e8e8;
 	padding: 12px;
+	box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
 }
 
-.login p {
-	padding: 12px;
+.login p, .signup p {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0px 15px 5px 15px;
 }
 
-.login input {
+.login input, .signup input:not(.last_name, .first_name) {
 	border-radius: 10px;
 	box-sizing: border-box;
 	display: block;
@@ -45,61 +47,298 @@ body {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ebebeb;
-	padding: 16px;
+	padding: 10px;
+	margin: 5px 0;
 	outline: 0;
-	font-size: 0.95em;
 }
 
-.login input[type="login_id"],
-.login input[type="password"] {
+.signup input.last_name {
+	float: left;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	width: 48%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ebebeb;
+	padding: 10px;
+	margin: 5px 0;
+	outline: 0;
+}
+
+.signup input.first_name {
+	float: right;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	width: 48%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ebebeb;
+	padding: 10px;
+	margin: 5px 0;
+	outline: 0;
+}
+
+.login input[type="text"], .login input[type="password"],
+.signup input[type="text"], .signup input[type="password"] {
 	background: #fff;
 	border-color: #bbb;
 	color: #555;
 }
 
-.login input[type="login_id"]:focus,
-.login input[type="password"]:focus {
+.login input[type="text"]:focus, .login input[type="password"]:focus,
+.signup input[type="text"]:focus, .signup input[type="password"]:focus {
 	border-color: #888;
 }
 
-.login input[type="submit"]:hover {
+.login input[type="submit"],
+.signup input[type="submit"] {
+	font-size: 80%;
+	margin: 25px 0px 20px 0px;
+	background: #961BF6;
+	border-color: transparent;
+	color: #fff;
+	cursor: pointer;
+}
+
+.login input[type="submit"]:hover,
+.signup input[type="submit"]:hover {
 	background: rgb(127, 0, 225);
 }
   
 /* Buttons' focus effect */
-.login input[type="submit"]:focus {
+.login input[type="submit"]:focus,
+.signup input[type="submit"]:focus {
 	border-color: rgb(139, 0, 246);
 }
 
-.book_list, .book_info {
+.account_create {
+	padding: 15px 10px;
+	text-align: left;
+	font-size: 80%;
+}
+
+.account_create a {
+	color: #b1b1b1
+}
+
+.account_create a:hover {
+	color : #828282;
+}
+
+label[for="error_message"] {
+	color: rgb(194, 0, 0);
+	font-size: 70%;
+	margin: 5px 10px 0px 17px;
+	display: inline-block;
+}
+
+label[for="login_id"], label[for="password"], label[for="full_name"]{
+    display: inline-block;
+    color: rgb(84, 84, 84);
+    font-size: 80%;;
+    margin: 15px 0px 0px 18px;
+}
+
+/* 必須ボタン */
+.required::after {
+	content: "必須";
+	color: #ffffff;
+	background: rgb(0, 158, 126);
+	font-size: 0.3em;
+	padding: 0 6px 1px 6px;
+	border-radius: 1.5em;
+	margin-left:2em;
+}
+
+.signup_complete {
+	margin: 50px 200px 0 200px;
+	text-align: center;
+	padding: 1rem 2rem;
+}
+
+.signup_complete h2 {
+	font-size: 35px;
+}
+
+.signup_complete p {
+	font-size: 90%;
+}
+
+.signup_complete a {
+	color: #437be3;
+}
+
+.signup_complete a:hover {
+	color: #003598;
+}
+
+
+/* ============================= */
+/* ヘッダー周り */
+/* ============================= */
+body {
+	margin: 0;
+}
+
+header {
+	width: 100%;
+	height: 70px;
+	display: flex;
 	position: relative;
-	background-color: #f1f1f1;
+	background-color:rgb(49, 49, 49);
+	/* border-bottom: medium solid #b2b2b2; */
+}
+
+header .title {
+	color: #ffffff;
+	font-size: 20px;
+	margin: 20px 0 20px 40px;
+}
+
+.search_container{
+	margin: auto auto;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	padding: 4px 10px;
+	border-radius: 20px;
+	height: 2.1em;
+	width: 400px;
+	overflow: hidden;
+	background-color: #ffffff;
+}
+
+.search_container input[type="text"]{
+	border: none;
+	height: 2.0em;
+	font-size: 75%;
+	width: 330px;
+}
+
+.search_container input[type="text"]:focus {
+	outline: 0;
+}
+
+.search_container input[type="submit"]{
+	cursor: pointer;
+	font-family: FontAwesome;
+	font-size: 1.3em;
+	border: none;
+	background: none;
+	color: #961BF6;
+	position: absolute;
+	width: 2.5em;
+	height: 2.5em;
+	right: 0;
+	top: -10px;
+	outline : none;
+}
+
+nav {
+    text-align: center;
+	margin-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+	height: 100%;
+    width: 120px; /* ここで項目の幅を指定します */
+}
+
+nav ul li a {
+    text-decoration: none;  /* 下線を取り消す */
+    color: rgb(255, 255, 255);
+}
+
+nav li:hover{
+    border-bottom: 3px solid #961BF6; /* 下線の太さや色を指定します */
+}
+
+
+/* ============================= */
+/* ホーム画面周り */
+/* ============================= */
+.book_list .image {
+	width: 700px;  /* 画像サイズ指定 */
+	margin: 30px 0 auto 30px;  /* 画像を中央に寄せる */
+}
+
+.book_list .image img {
+	width: 100%;
+	height: auto;
+	border: 1px solid #dddddd;
+}
+
+.book_info {
+	margin: 30px 30px 30px 30px;
+}
+
+.book_info h3 {
+	margin-top: 0;
+	margin-bottom: 1px;
+	/* 指定した行数以上の場合は ... で省略する */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;  /* 行数 */
+	overflow: hidden; 
+}
+
+.book_info label[for="author"] {
+	font-size: 11px;
+}
+
+.book_info label[for="publisher"] {
+	margin-left: 20px;
+	font-size: 11px;
+}
+
+.book_info .discription {
+	font-size: 12px;
+	/* 指定した行数以上の場合は ... で省略する */
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;  /* 行数 */
+    overflow: hidden; 
+	line-height: 19px;
+}
+
+.book_list {
+	margin-top: 50px;
+	width: 800px;
+	height: 280px;
+	position: relative;
+	display: flex;  /* 横並びにする */
+	background-color: #ffffff;
 	margin-left: auto;
 	margin-right: auto;
-    border: 2px solid #d3d3d3;
-    border-radius: 10px;
-	width: 600px;
+    border: 1.5px solid #dddddd;
+    border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
 }
 
 .book_list:hover {
-	background-color: #e4e4e4;
+	background-color: #f6f6f6;
 	margin-left: auto;
 	margin-right: auto;
-    border: 2px solid #b7b7b7;
-    border-radius: 10px;
-	width: 600px;
+	border: 1.5px solid #cbcaca;
+    border-radius: 15px;
+	width: 800px;
 }
 
+/* div自体をボタンに見立てる */
 .book_list a {
 	position:absolute;
 	top:0;
 	left:0;
 	height:100%;
 	width:100%;
-}
-
-.book_list a:hover{
-	background-color: #e4e4e4;
-	opacity: 0.3;
-    border-radius: 10px;
 }
