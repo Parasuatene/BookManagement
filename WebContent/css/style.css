@@ -439,12 +439,74 @@ nav li:hover{
 	margin-bottom: 30px;
 }
 
-.input_date_container {
-	display: flex;
-	margin-top: 10px;
-	margin-bottom: 20px;
+
+/* ============================= */
+/* 書籍貸出申請画面 */
+/* ============================= */
+.rental_book_panel {
+	margin-top: 50px;
+	width: 800px;
+	height: auto;
+	position: relative;
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+    border: 1.5px solid #dddddd;
+    border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(0, 0, 0, .1);
 }
 
-.input_date_container .shedule_date {
+.rental_book_panel .book_info {
+	display: flex;  /* 横並びにする */
+}
+
+.rental_book_panel .book_info .book_info_image {
+    width: 200px;
+    margin: 0px 0 auto 0;
+}
+
+.rental_book_panel .book_info .book_info_image img {
+	width: 100%;
+	height: auto;
+	border: 1px solid #dddddd;
+}
+
+/* テキスト説明文 */
+.rental_book_panel .book_info_text {
+	width: 500px
+}
+
+.rental_book_panel .book_info .book_info_text {
+	margin: 0 30px 0 30px;
+}
+
+.rental_book_panel .book_info .book_info_text h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 22px;
+}
+
+.rental_book_panel .book_info .book_info_text label[for="author"] {
+	font-size: 14px;
+	color:rgb(146, 146, 146);
+}
+
+.rental_book_panel .book_info .book_info_text label[for="publisher"] {
+	margin-left: 20px;
+	font-size: 14px;
+	color:rgb(146, 146, 146);
+}
+
+.rental_book_panel .book_info .book_info_text .discription {
+	font-size: 14px;
+	line-height: 25px;
+	display: inline-block;
+}
+
+.rental_book_panel .input_date_container {
+	display: flex;
+}
+
+.rental_book_panel .input_date_container .shedule_date {
 	margin-left: 40px;
 }
