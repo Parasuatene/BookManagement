@@ -32,10 +32,11 @@
 						<label for="author">${book.author}</label>
 						<label for="publisher">${book.publisher}</label>
 						<p class="discription">${book.discription}</p>
-						<div class="btn_rental_request">
-							<a href="rentalRequest?id=${book.id}">貸出申請を行う</a>
-						</div>
 					</div>
+				</div>
+				<div class="btn_page_transition">
+					<a id="return" href="home">戻る</a>
+					<a id="confirm" href="rentalRequest?id=${book.id}">貸出申請に移る</a>
 				</div>
 			</div>
 		</c:if>

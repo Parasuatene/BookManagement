@@ -163,25 +163,25 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	margin-left:2em;
 }
 
-.signup_complete, .not_found {
+.signup_complete, .not_found, .rental_complete {
 	margin: 50px 200px 0 200px;
 	text-align: center;
 	padding: 1rem 2rem;
 }
 
-.signup_complete h2, .not_found h2 {
+.signup_complete h2, .not_found h2, .rental_complete h2 {
 	font-size: 35px;
 }
 
-.signup_complete p, .not_found p {
+.signup_complete p, .not_found p, .rental_complete p {
 	font-size: 90%;
 }
 
-.signup_complete a, .not_found a {
+.signup_complete a, .not_found a, .rental_complete a {
 	color: #437be3;
 }
 
-.signup_complete a:hover, .not_found a:hover {
+.signup_complete a:hover, .not_found a:hover, .rental_complete a:hover {
 	color: #003598;
 }
 
@@ -281,7 +281,7 @@ nav li:hover{
 /* ============================= */
 .book_list .image {
 	width: 140px;  /* 画像サイズ指定 */
-	margin: 30px 30px auto 30px;  /* 画像を中央に寄せる */
+	margin: 30px 30px auto 40px;  /* 画像を中央に寄せる */
 }
 
 .book_list .image img {
@@ -295,7 +295,7 @@ nav li:hover{
 }
 
 .book_list .book_info {
-	width: 500px;
+	width: 520px;
 	margin: 30px 30px 30px 30px;
 }
 
@@ -376,6 +376,10 @@ nav li:hover{
 /* ============================= */
 /* 貸出申請ボタン */
 /* ============================= */
+.btn_rental_request {
+	margin: 20px 0 0 0;
+}
+
 .btn_rental_request a {
 	text-decoration: none;
 	font-size: 12px;
@@ -433,11 +437,11 @@ nav li:hover{
 
 /* テキスト説明文 */
 .book_info_panel .book_info_text {
-	width: 500px
+	width: 530px
 }
 
 .book_info_panel .book_info .book_info_text {
-	margin: 0 30px 0 30px;
+	margin: 0 20px 0 40px;
 }
 
 .book_info_panel .book_info .book_info_text h3 {
@@ -469,4 +473,85 @@ nav li:hover{
 
 .book_info_panel .input_date_container .shedule_date {
 	margin-left: 40px;
+}
+
+/* 戻るボタンと申請ボタン */
+.book_info_panel .btn_page_transition {
+	display: flex;
+	margin: 20px 30px 40px 30px;
+}
+
+.book_info_panel .btn_page_transition #return {
+	text-decoration: none;
+	width: 300px;
+	font-size: 14px;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+	margin-left: 5px;
+	margin-right: 10px;
+    padding: 10px 25px;
+    color: #FFF;
+	font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #bbbbbb;
+}
+
+.book_info_panel .btn_page_transition #return:hover {
+    background: #7e7e7e;
+}
+
+.book_info_panel .btn_page_transition #confirm:not(.book_info_panel .btn_page_transition #post_confirm) {
+	text-decoration: none;
+	width: 300px;
+	font-size: 14px;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+	margin-left: 10px;
+	margin-right: 5px;
+    padding: 10px 25px;
+    color: #FFF;
+	font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #009DA7;
+}
+
+.book_info_panel .btn_page_transition #post_confirm {
+	text-decoration: none;
+	width: 350px;
+	border: none;
+	font-size: 14px;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+	margin-left: 10px;
+	margin-right: 5px;
+    padding: 10px 25px;
+    color: #FFF;
+	font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #009DA7;
+}
+
+.book_info_panel .btn_page_transition #confirm:hover {
+    background: #006f77;
+}
+
+.book_info_panel .btn_page_transition #post_confirm:hover {
+    background: #006f77;
+	cursor: pointer;
+	cursor: hand;
 }

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>貸出申請完了</title>
 	</head>
