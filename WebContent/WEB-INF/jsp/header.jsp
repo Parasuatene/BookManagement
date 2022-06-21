@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <header>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<h1 class="title">GeeBook</h1>
 	<form class="search_container" action="" method="get">
-		<input type="text" name="query" placeholder="検索キーワード（本のタイトル、著者名など）">
+		<input type="text" name="q" placeholder="検索キーワード（本のタイトル、著者名など）">
 		<input type="submit" value="&#xf002">
 	</form>
 	<nav class="menu">
