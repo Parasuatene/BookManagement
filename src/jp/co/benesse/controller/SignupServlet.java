@@ -1,8 +1,8 @@
 package jp.co.benesse.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,30 +54,34 @@ public class SignupServlet extends HttpServlet {
 		session.setAttribute("password", password);
 
 
-		// エラーメッセージの格納用
-		List<String> errorMessages = new ArrayList<>();
+//		// エラーメッセージの格納用
+//		List<String> errorMessages = new ArrayList<>();
+//
+//		if (lastName == null || "".equals(lastName)) {
+//			errorMessages.add("姓が未入力です");
+//		}
+//
+//		if (firstName == null || "".equals(firstName)) {
+//			errorMessages.add("名が未入力です");
+//		}
 
-		if (lastName == null || "".equals(lastName)) {
-			errorMessages.add("姓が未入力です");
-		}
-
-		if (firstName == null || "".equals(firstName)) {
-			errorMessages.add("名が未入力です");
-		}
+		// エラー内容をハッシュマップに記録
+		Map<String, String> errorMessages = new HashMap<>();
 
 		// ログインIDに誤りがある場合
 		// 5文字以上50文字以下、半角英数字、記号（@._-）
 		if (loginId == null || !RegexManager.isPatternMatches("^[A-Za-z0-9@._-]{5,50}$", loginId)) {
-			errorMessages.add("ログインIDは半角英数字、記号（@._-）で5文字以上、50文字以下で入力してください");
+			errorMessages.put("errorLoginId", "ログインIDは半角英数字、記号（@._-）で5文字以上、50文字以下で入力してください");
 		}
 
 		// パスワードが5文字以上、50文字以下を満たさない場合
 		if (password == null || password.length() < 5 || 50 < password.length()) {
-			errorMessages.add("パスワードは5文字以上、50文字以下で入力してください");
+			errorMessages.put("errorPassword", "※パスワードは5文字〜50文字で入力してください");
 		}
 
 		// 何らかの不具合がある場合は、signup.jspにフォワード
 		if (!errorMessages.isEmpty()) {
+			System.out.println(errorMessages.get("errorLoginId"));
 			request.setAttribute("errorMessages", errorMessages);
 			request.getRequestDispatcher("WEB-INF/jsp/signup.jsp").forward(request, response);
 			return;
@@ -102,7 +106,7 @@ public class SignupServlet extends HttpServlet {
 		// 一意制約違反の場合はエラーメッセージと共にsignup.jspにフォワードする
 		// TODO: マジックナンバーになっているため、23505をEnumで扱いたい
 		if (result == 23505) {
-			errorMessages.add("入力されたログインIDは既に存在しています");
+			errorMessages.put("errorDistinctLoginId", "※入力されたログインIDは既に存在しています");
 			request.setAttribute("errorMessages", errorMessages);
 			request.getRequestDispatcher("WEB-INF/jsp/signup.jsp").forward(request, response);
 			return;
