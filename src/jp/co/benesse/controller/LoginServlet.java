@@ -2,8 +2,6 @@ package jp.co.benesse.controller;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,24 +41,25 @@ public class LoginServlet extends HttpServlet {
 		String loginId = request.getParameter("login_id");
 		String password = request.getParameter("password");
 
+		// TODO: リファクタリング
 
-		// エラーメッセージの格納用
-		List<String> errorMessages = new ArrayList<>();
+//		// エラーメッセージの格納用
+//		List<String> errorMessages = new ArrayList<>();
 
-		if (loginId == null || "".equals(loginId)) {
-			errorMessages.add("ログインIDが入力されていません");
-		}
+//		if (loginId == null || "".equals(loginId)) {
+//			errorMessages.add("ログインIDが入力されていません");
+//		}
+//
+//		if (password == null || "".equals(password)) {
+//			errorMessages.add("パスワードが入力されていません");
+//		}
 
-		if (password == null || "".equals(password)) {
-			errorMessages.add("パスワードが入力されていません");
-		}
-
-		// 入力されていない場合はログインページにフォワードする
-		if (!errorMessages.isEmpty()) {
-			request.setAttribute("errorMessages", errorMessages);
-			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
-			return;
-		}
+//		// 入力されていない場合はログインページにフォワードする
+//		if (!errorMessages.isEmpty()) {
+//			request.setAttribute("errorMessages", errorMessages);
+//			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
+//			return;
+//		}
 
 
 		// ログインID・パスワードの組み合わせがDBに存在するかを確認する
@@ -71,8 +70,8 @@ public class LoginServlet extends HttpServlet {
 
 		// userがnullの時はログイン処理に失敗したとき
 		if (user == null) {
-			errorMessages.add("ログインID、またはパスワードに誤りがあります");
-			request.setAttribute("errorMessages", errorMessages);
+			String errorMessage = "ログインID、またはパスワードに誤りがあります";
+			request.setAttribute("errorMessage", errorMessage);
 			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 			return;
 		}

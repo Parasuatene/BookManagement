@@ -17,6 +17,7 @@ public class SignupCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * TODO: signupCompleteはPOSTにすべきなので、余裕があれば修正する
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

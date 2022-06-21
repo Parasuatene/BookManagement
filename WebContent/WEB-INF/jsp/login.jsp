@@ -11,13 +11,11 @@
 	<body>
 		<div class="login">
 			<h3 class="login_header">サインイン</h3>
-			<!-- TODO: エラーメッセージを下のpタグに差し込む -->
-			<c:forEach var="errorMessage" items="${errorMessages}">
-				<span class="errorMsg"> <c:out value="${errorMessage}" /></span>
-				<br>
-			</c:forEach>
 			<form class="login_container" action="login" method="post">
-				<!-- <label for="error_message">＊ログイン、またはパスワードに誤りがあります</label> -->
+				<%-- <c:set var="errorMessages" value="${errorMessages}"/> --%>
+				<c:if test="${not empty errorMessage}">
+					<label for="error_message">${errorMessage}</label>
+				</c:if>
 				<label for="login_id">ログインID</label><br>
 				<p><input type="text" name="login_id"></p>
 				<label for="password">パスワード</label><br>
@@ -27,5 +25,6 @@
 			<div class="account_create">
 				<a href="signup">新規アカウント作成</a>
 			</div>
+		</div>
 	</body>
 </html>
