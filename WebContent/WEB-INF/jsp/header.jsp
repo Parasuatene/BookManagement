@@ -1,18 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<div align="center">
-	<!-- 検索フォーム -->
-	<form action="" method="get">
-		<input type="text" name="query">
-		<input type="submit" value="検索">
+<header>
+	<h1 class="title">GeeBook</h1>
+	<form class="search_container" action="" method="get">
+		<input type="text" name="query" placeholder="検索キーワード（本のタイトル、著者名など）">
+		<input type="submit" value="&#xf002">
 	</form>
-	<!-- TODO:ボタンタグに変更する予定あり -->
-	<form action="" method="get">
-		<input type="submit" name="regist" value="書類の登録">
-	</form>
-	<!-- TODO:ボタンタグに変更する予定あり -->
-	<form action="" method="get">
-		<input type="submit" name="rental_books" value="貸出書籍一覧">
-	</form>
-</div>
+	<nav class="menu">
+		<ul>
+			<li><a href="rental_books">借りている書籍</a></li>
+		</ul>
+	</nav>
+</header>
