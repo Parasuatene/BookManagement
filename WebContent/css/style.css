@@ -13,6 +13,14 @@ body {
 	background-color: #f5f5f5;
 }
 
+.title a {
+	text-decoration: none;  /* 下線を取り消す */
+    color: rgb(255, 255, 255);
+}
+
+.title a:hover {
+    color: rgb(225, 225, 225);
+}
 
 /* ============================= */
 /* ログイン周り */
