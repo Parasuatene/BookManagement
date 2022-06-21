@@ -3,11 +3,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>貸出申請完了</title>
 	</head>
-	<body>
-		<h1>返却が完了しました</h1>
-		<button onclick="location.href='home'">書籍一覧に戻る</button>
+	<body>		<!-- ヘッダーの読み込み -->
+		<%@ include file="header.jsp" %>
+		<div class="return_complete">
+			<h2>返却が完了しました</h2>
+			<p><a href="home">書籍一覧に戻る</a></p>
+		</div>
 	</body>
 </html>

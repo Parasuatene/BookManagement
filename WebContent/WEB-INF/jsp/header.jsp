@@ -17,7 +17,7 @@
 		</c:if>
 		<c:if test="${not empty sessionScope.id}">
 			<ul>
-				<li><a href="rental_books">借りている書籍</a></li>
+				<li><a href="rentalList">借りている書籍</a></li>
 			</ul>
 		</c:if>
 	</nav>

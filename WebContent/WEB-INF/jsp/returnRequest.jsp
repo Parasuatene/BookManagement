@@ -15,25 +15,33 @@
 		<c:set var="book" value="${book}"/>
 
 		<c:if test="${empty book}">
-			<!-- ページが見つからなかった時の処理 -->
-		 	<h1>お探しのページは見つかりませんでした</h1>
-		 	<a href="home">書籍一覧ページに戻る</a>
+			<div class="not_found">
+			 	<h2>お探しのページは見つかりませんでした</h2>
+			 	<a href="home">書籍一覧に戻る</a>
+			 </div>
 		</c:if>
 
 		<c:if test="${not empty book}">
-			<!-- ページが見つかった時の処理 -->
-			<div class="book_info">
-				<h3>${book.title}</h3>
-				<p>${book.author}</p>
-				<p>${book.publisher}</p>
-				<p>${book.imgPath}</p>
-				<p>${book.discription}</p>
-				<button onclick="rentalList">戻る</button>
-				<form action="returnComplete" method="post">
-					<input type="hidden" name="rental_id" value="${book.rentalControl.id}">
-					<input type="submit" value="返却">
-				</form>
-			</div>
+			<form action="returnComplete" method="post">
+				<div class="book_info_panel">
+					<div class="book_info">
+						<figure class="book_info_image">
+							<img src="${book.imgPath}" alt="">
+						</figure>
+						<div class="book_info_text">
+							<h3>${book.title}</h3>
+							<label for="author">${book.author}</label>
+							<label for="publisher">${book.publisher}</label>
+							<p class="discription">${book.discription}</p>
+		                </div>
+		            </div>
+					<div class="btn_page_transition">
+						<a id="return" href="rentalList">戻る</a>
+						<input type="hidden" name="rental_id" value="${book.rentalControl.id}">
+						<input id="post_return_confirm" type="submit" value="返却">
+					</div>
+				</div>
+			</form>
 		</c:if>
 	</body>
 </html>

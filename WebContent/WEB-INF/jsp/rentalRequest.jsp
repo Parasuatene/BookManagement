@@ -39,7 +39,7 @@
 		            </div>
 					<div class="btn_page_transition">
 						<a id="return" href="bookInfo?id=${book.id}">戻る</a>
-						<!-- <a id="confirm" href="rentalComplete">申請</a> -->
+						<input type="hidden" name="book_id" value="${book.id}">
 						<input id="post_confirm" type="submit" value="申請">
 					</div>
 				</div>

@@ -8,7 +8,9 @@
 		<title>貸出申請完了</title>
 	</head>
 	<body>
-		<h1>貸出申請が完了しました</h1>
-		<button onclick="location.href='home'">書籍一覧に戻る</button>
+		<div class="rental_complete">
+			<h1>貸出申請が完了しました</h1>
+			<a href="home">書籍一覧に戻る</a>
+		</div>
 	</body>
 </html>

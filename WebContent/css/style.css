@@ -11,6 +11,8 @@ body {
     font-family: "Noto Sans JP", sans-serif;
 	color: rgb(49, 49, 49);
 	background-color: #f5f5f5;
+	flex-direction: column;
+	display: flex;
 }
 
 .title a {
@@ -21,6 +23,23 @@ body {
 .title a:hover {
     color: rgb(225, 225, 225);
 }
+
+
+/* ============================= */
+/* フッター */
+/* ============================= */
+footer{
+	left: 0;
+	width: 100%;
+	color: white;
+	margin-top: 80px;
+	background: rgb(49, 49, 49);
+}
+
+footer address {
+	padding: auto auto;
+}
+
 
 /* ============================= */
 /* ログイン周り */
@@ -171,25 +190,25 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	margin-left:2em;
 }
 
-.signup_complete, .not_found, .rental_complete {
+.signup_complete, .not_found, .rental_complete, .return_complete{
 	margin: 50px 200px 0 200px;
 	text-align: center;
 	padding: 1rem 2rem;
 }
 
-.signup_complete h2, .not_found h2, .rental_complete h2 {
+.signup_complete h2, .not_found h2, .rental_complete h2, .return_complete h2 {
 	font-size: 35px;
 }
 
-.signup_complete p, .not_found p, .rental_complete p {
+.signup_complete p, .not_found p, .rental_complete p, .return_complete p {
 	font-size: 90%;
 }
 
-.signup_complete a, .not_found a, .rental_complete a {
+.signup_complete a, .not_found a, .rental_complete a, .return_complete a {
 	color: #437be3;
 }
 
-.signup_complete a:hover, .not_found a:hover, .rental_complete a:hover {
+.signup_complete a:hover, .not_found a:hover, .rental_complete a:hover, .return_complete a:hover {
 	color: #003598;
 }
 
@@ -554,12 +573,39 @@ nav li:hover{
     background: #009DA7;
 }
 
+.book_info_panel .btn_page_transition #post_return_confirm {
+	text-decoration: none;
+	width: 350px;
+	border: none;
+	font-size: 14px;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+	margin-left: 10px;
+	margin-right: 5px;
+    padding: 10px 25px;
+    color: #FFF;
+	font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: rgb(194, 0, 0);
+}
+
 .book_info_panel .btn_page_transition #confirm:hover {
     background: #006f77;
 }
 
 .book_info_panel .btn_page_transition #post_confirm:hover {
     background: #006f77;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.book_info_panel .btn_page_transition #post_return_confirm:hover {
+    background: rgb(132, 0, 0);
 	cursor: pointer;
 	cursor: hand;
 }

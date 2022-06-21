@@ -6,33 +6,40 @@
 	<head>
 		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
-		<title>貸出中の書籍リスト</title>
+		<title>借りている書籍一覧</title>
 	</head>
 	<body>
 		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<c:if test="${empty requestScope.rentalBookList}">
-			現在、"${sessionScope.id}"さんに貸出中の書籍はございません。
-			<button onclick="location.href='home'">書籍一覧に戻る</button>
+			<div class="not_found">
+				<h3>現在、借りている書籍はございません</h3>
+				<p><a href="home">書籍一覧に戻る</a></p>
+			</div>
 		</c:if>
 
 		<c:if test="${not empty requestScope.rentalBookList}">
-			<h3>"${sessionScope.id}"さんに貸出中の書籍一覧</h3>
 			<c:forEach var="book" items="${rentalBookList}">
-				<c:set var="start" value="${book.rentalControl.startDate}"/>
-				<c:set var="schedule" value="${book.rentalControl.scheduleDate}"/>
-				<c:set var="end" value="${book.rentalControl.endDate}"/>
 				<div class="book_list">
-					<p>返却予定日（${schedule}）</p>
-					<h3>${book.title}</h3>
-					<p>${book.author}</p>
-					<p>${book.publisher}</p>
-					<p>${book.imgPath}</p>
-					<p>${book.discription}</p>
-					<a href="returnRequest?id=${book.rentalControl.id}"></a>
+					<figure class="image">
+						<a href="returnRequest?id=${book.rentalControl.id}">
+							<img src="https://img.ips.co.jp/ij/15/1115101068/1115101068-520x.jpg" alt="">
+						</a>
+					</figure>
+					<div class="book_info">
+						<c:set var="startDate" value="${book.rentalControl.startDate}"/>
+						<c:set var="scheduleDate" value="${book.rentalControl.scheduleDate}"/>
+						<c:set var="endDate" value="${book.rentalControl.endDate}"/>
+						<c:if test="${not empty startDate and empty endDate}">
+							<p class="rental_status">貸出中（返却予定日:${scheduleDate}）</p>
+						</c:if>
+						<h3><a href="returnRequest?id=${book.rentalControl.id}">${book.title}</a></h3>
+						<label for="author">${book.author}</label>
+						<label for="publisher">${book.publisher}</label>
+						<p class="discription">${book.discription}</p>
+					</div>
 				</div>
-				<br>
 			</c:forEach>
 		</c:if>
 	</body>
