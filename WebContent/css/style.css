@@ -438,3 +438,13 @@ nav li:hover{
 	line-height: 25px;
 	margin-bottom: 30px;
 }
+
+.input_date_container {
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.input_date_container .shedule_date {
+	margin-left: 40px;
+}
