@@ -24,7 +24,7 @@
 				<div class="book_list">
 					<figure class="image">
 						<a href="returnRequest?id=${book.rentalControl.id}">
-							<img src="https://img.ips.co.jp/ij/15/1115101068/1115101068-520x.jpg" alt="">
+							<img src="img/<c:out value="${book.imgPath}" />" alt="">
 						</a>
 					</figure>
 					<div class="book_info">

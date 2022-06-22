@@ -24,7 +24,7 @@
 				<div class="book_info_panel">
 					<div class="book_info">
 						<figure class="book_info_image">
-							<img src="${book.imgPath}" alt="">
+							<img src="img/<c:out value="${book.imgPath}" />" alt="">
 						</figure>
 						<div class="book_info_text">
 							<h3>${book.title}</h3>
