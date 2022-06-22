@@ -8,7 +8,12 @@
 		<title>貸出申請エラー</title>
 	</head>
 	<body>
-		<h3>指定した書籍は既に他の利用者に貸出済みです。</h3>
-		<button onclick="location.href='home'">書籍一覧に戻る</button>
+		<!-- ヘッダーの読み込み -->
+		<%@ include file="header.jsp" %>
+
+		<div class="error_page">
+			<h2>指定した書籍は既に他の利用者に貸出済みです</h2>
+			<p><a href="home">書籍一覧</a>に戻る</p>
+		</div>
 	</body>
 </html>

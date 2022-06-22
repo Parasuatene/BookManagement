@@ -8,6 +8,9 @@
 		<title>貸出申請完了</title>
 	</head>
 	<body>
+		<!-- ヘッダーの読み込み -->
+		<%@ include file="header.jsp" %>
+
 		<div class="rental_complete">
 			<h1>貸出申請が完了しました</h1>
 			<a href="home">書籍一覧に戻る</a>

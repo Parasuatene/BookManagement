@@ -8,6 +8,9 @@
 		<title>書籍登録</title>
 	</head>
     <body>
+		<!-- ヘッダーの読み込み -->
+		<%@ include file="adminHeader.jsp" %>
+
         <div class="contact">
             <h1 class="contact_ttl">新規書籍の登録</h1>
 

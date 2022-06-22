@@ -8,6 +8,9 @@
 		<title>書籍登録の完了</title>
 	</head>
 	<body>
+		<!-- ヘッダーの読み込み -->
+		<%@ include file="adminHeader.jsp" %>
+
 		<div class="regist_complete">
 			<h2>書籍の登録が完了しました</h2>
 			<p><a href="registration">書籍一覧</a>に戻る</p>

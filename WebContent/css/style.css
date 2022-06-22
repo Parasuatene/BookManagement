@@ -190,25 +190,25 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	margin-left:2em;
 }
 
-.signup_complete, .not_found, .rental_complete, .return_complete{
+.signup_complete, .not_found, .rental_complete, .return_complete, .error_page {
 	margin: 50px 200px 0 200px;
 	text-align: center;
 	padding: 1rem 2rem;
 }
 
-.signup_complete h2, .not_found h2, .rental_complete h2, .return_complete h2 {
+.signup_complete h2, .not_found h2, .rental_complete h2, .return_complete h2, .error_page {
 	font-size: 35px;
 }
 
-.signup_complete p, .not_found p, .rental_complete p, .return_complete p {
+.signup_complete p, .not_found p, .rental_complete p, .return_complete p, .error_page {
 	font-size: 90%;
 }
 
-.signup_complete a, .not_found a, .rental_complete a, .return_complete a {
+.signup_complete a, .not_found a, .rental_complete a, .return_complete a, .error_page {
 	color: #437be3;
 }
 
-.signup_complete a:hover, .not_found a:hover, .rental_complete a:hover, .return_complete a:hover {
+.signup_complete a:hover, .not_found a:hover, .rental_complete a:hover, .return_complete a:hover, .error_page a:hover {
 	color: #003598;
 }
 
@@ -216,10 +216,6 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 /* ============================= */
 /* ヘッダー周り */
 /* ============================= */
-body {
-	margin: 0;
-}
-
 header {
 	width: 100%;
 	height: 70px;
