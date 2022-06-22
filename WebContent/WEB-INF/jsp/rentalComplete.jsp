@@ -12,7 +12,7 @@
 		<%@ include file="header.jsp" %>
 
 		<div class="rental_complete">
-			<h1>貸出申請が完了しました</h1>
+			<h2>貸出申請が完了しました</h2>
 			<a href="home">書籍一覧に戻る</a>
 		</div>
 	</body>

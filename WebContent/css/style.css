@@ -206,15 +206,17 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 	padding: 1rem 2rem;
 }
 
-.signup_complete h2, .not_found h2, .rental_complete h2, .return_complete h2, .error_page {
+.signup_complete h2, .not_found h2, .rental_complete h2, .return_complete h2, .error_page h2 {
 	font-size: 35px;
+	margin-bottom: 35px;
 }
 
-.signup_complete p, .not_found p, .rental_complete p, .return_complete p, .error_page {
+.signup_complete p, .not_found p, .rental_complete p, .return_complete p, .error_page p {
 	font-size: 90%;
+	margin-bottom: 15px
 }
 
-.signup_complete a, .not_found a, .rental_complete a, .return_complete a, .error_page {
+.signup_complete a, .not_found a, .rental_complete a, .return_complete a, .error_page a {
 	color: #437be3;
 }
 

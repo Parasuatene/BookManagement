@@ -14,7 +14,7 @@
 
 		<c:if test="${empty requestScope.rentalBookList}">
 			<div class="not_found">
-				<h3>現在、借りている書籍はございません</h3>
+				<h2>現在、借りている書籍はございません</h2>
 				<p><a href="home">書籍一覧に戻る</a></p>
 			</div>
 		</c:if>

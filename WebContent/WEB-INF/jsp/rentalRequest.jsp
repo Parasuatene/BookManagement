@@ -15,8 +15,10 @@
 		<c:set var="book" value="${book}"/>
 
 		<c:if test="${empty book}">
-		 	<h1>お探しのページは見つかりませんでした</h1>
-		 	<a href="home">書籍一覧ページに戻る</a>
+			<div class="not_found">
+			 	<h1>お探しのページは見つかりませんでした</h1>
+			 	<a href="home">書籍一覧ページに戻る</a>
+		 	</div>
 		</c:if>
 
 		<c:if test="${not empty book}">

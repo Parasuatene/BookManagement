@@ -14,7 +14,6 @@
 
 		<div class="regist_complete">
 			<h2>書籍の登録が完了しました</h2>
-			<br>
 			<p><a href="registration">書籍登録画面</a>に戻る</p>
 			<p><a href="adminHome">管理者ホーム画面</a>に戻る</p>
 		</div>
