@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/adminHomeStyle.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>書籍登録の完了</title>
 	</head>
 	<body>
-		<h1>書籍の登録が完了しました</h1>
-		<button onclick="location.href='registration'">続けて書籍を登録する</button>
-		<button onclick="location.href='adminHome'">管理者ホーム画面に戻る</button>
+		<div class="regist_complete">
+			<h2>書籍の登録が完了しました</h2>
+			<p><a href="registration">書籍一覧</a>に戻る</p>
+			<p><a href="adminHome">管理者ホーム画面</a>に戻る</p>
+		</div>
 	</body>
 </html>

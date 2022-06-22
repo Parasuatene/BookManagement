@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgb(49, 49, 49);
+    /* font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; */
+}
+
+/* 書籍の登録 */
+
+.contact {
+    width: 700px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.contact_ttl {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact_table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contact_item,
+.contact_body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact_item {
+    text-align: left;
+    width: 30%;
+    background-color: #eee;
+}
+
+.contact_body {
+    width: 70%;
+}
+
+.form_text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
+
+input[type="text"] {
+    outline: none;
+}
+
+.form_textarea {
+    outline: none;
+    resize: vertical;
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.contact_submit {
+    width: 250px;
+    background-color: #961BF6;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact_submit:hover {
+    background-color: #6812aa;
+}
+
+.regist_required::after {
+	content: "必須";
+	color: #ffffff;
+	background: rgb(0, 158, 126);
+	font-size: 0.5em;
+	padding: 0 6px 0px 6px;
+	border-radius: 1.5em;
+	margin-left:2em;
+}
+
+
+/* 完了画面 */
+.regist_complete {
+	margin: 50px 200px 0 200px;
+	text-align: center;
+	padding: 1rem 2rem;
+}
+
+.regist_complete  h2 {
+	font-size: 35px;
+}
+
+.regist_complete  p {
+	font-size: 90%;
+}
+
+.regist_complete  a {
+	color: #437be3;
+}
+
+.regist_complete  a:hover {
+	color: #003598;
+}

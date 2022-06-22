@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="css/adminStyle.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>管理者用ログイン</title>
 	</head>
@@ -22,9 +22,6 @@
 				<p><input type="password" name="password"></p>
 				<p><input type="submit" value="ログイン"></p>
 			</form>
-			<div class="account_create">
-				<a href="signup">新規アカウント作成</a>
-			</div>
 		</div>
 	</body>
 </html>

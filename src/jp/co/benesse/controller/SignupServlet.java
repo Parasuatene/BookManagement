@@ -53,18 +53,6 @@ public class SignupServlet extends HttpServlet {
 		session.setAttribute("loginId", loginId);
 		session.setAttribute("password", password);
 
-
-//		// エラーメッセージの格納用
-//		List<String> errorMessages = new ArrayList<>();
-//
-//		if (lastName == null || "".equals(lastName)) {
-//			errorMessages.add("姓が未入力です");
-//		}
-//
-//		if (firstName == null || "".equals(firstName)) {
-//			errorMessages.add("名が未入力です");
-//		}
-
 		// エラー内容をハッシュマップに記録
 		Map<String, String> errorMessages = new HashMap<>();
 
