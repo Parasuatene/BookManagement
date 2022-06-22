@@ -17,7 +17,7 @@
 		</c:if>
 		<c:if test="${not empty sessionScope.id}">
 			<ul>
-				<li><a href="registration">書籍を登録する</a></li>
+				<li><a href="registration">書籍の登録</a></li>
 			</ul>
 		</c:if>
 	</nav>

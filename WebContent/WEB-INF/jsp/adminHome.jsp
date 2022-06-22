@@ -16,9 +16,8 @@
 		<c:forEach var="book" items="${bookList}">
 			<div class="book_list">
 				<figure class="image">
-					<%-- <a href="bookInfo?id=${book.id}"> --%>
-					<a href="#"></a>
-						<img src="https://img.ips.co.jp/ij/15/1115101068/1115101068-520x.jpg" alt="">
+					<a href="#">
+						<img src="img/<c:out value="${book.imgPath}" />" alt="">
 					</a>
 				</figure>
 				<div class="book_info">

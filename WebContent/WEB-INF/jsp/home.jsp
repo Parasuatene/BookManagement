@@ -30,6 +30,9 @@
 					<label for="author">${book.author}</label>
 					<label for="publisher">${book.publisher}</label>
 					<p class="discription">${book.discription}</p>
+					<label for="category_tag">
+						<a># ${book.category.name}</a>
+					</label>
 				</div>
 			</div>
 		</c:forEach>

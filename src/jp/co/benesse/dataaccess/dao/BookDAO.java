@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.co.benesse.dataaccess.value.Book;
+import jp.co.benesse.dataaccess.value.Category;
 import jp.co.benesse.dataaccess.value.RentalControl;
 
 public class BookDAO extends BaseDAO {
@@ -25,8 +26,8 @@ public class BookDAO extends BaseDAO {
 		try {
 			// SQLの定義
 			String sql = "INSERT INTO t_book "
-						 + "(title, author, publisher, img_path, discription) "
-						 + "VALUES (?,?,?,?,?)";
+						 + "(title, author, publisher, img_path, discription, category_id) "
+						 + "VALUES (?,?,?,?,?, ?)";
 			// SQLの作成
 			preparedStatement = getConnection().prepareStatement(sql);
 			// 値の設定
@@ -35,6 +36,7 @@ public class BookDAO extends BaseDAO {
 			preparedStatement.setString(3, book.getPublisher());
 			preparedStatement.setString(4, book.getImgPath());
 			preparedStatement.setString(5, book.getDiscription());
+			preparedStatement.setInt(6, book.getCategory().getId());
 			// SQLの実行
 			int result = preparedStatement.executeUpdate();
 			return result;
@@ -62,12 +64,13 @@ public class BookDAO extends BaseDAO {
 		try {
 			// SQLの定義
 			String sql = "SELECT tb.id AS tb_id, tb.title AS tb_title, tb.author AS tb_author"
-						 + ", tb.publisher AS tb_publisher, tb.img_path AS tb_img_path, tb.discription AS tb_discription"
+						 + ", tb.publisher AS tb_publisher, tb.img_path AS tb_img_path, tb.discription AS tb_discription, tb.category_id AS tb_category_id"
 						 + ", vr.id AS vr_id, vr.user_id AS vr_user_id, vr.book_id AS vr_book_id"
-						 + ", vr.start_date AS vr_start_date, vr.schedule_date AS vr_schedule_date, vr.end_date AS vr_end_date "
+						 + ", vr.start_date AS vr_start_date, vr.schedule_date AS vr_schedule_date, vr.end_date AS vr_end_date, tc.name AS tc_name "
 						 + "FROM t_book AS tb "
 						 + "LEFT OUTER JOIN v_latest_rental_info AS vr "
-						 + "ON tb.id = vr.book_id";
+						 + "ON tb.id = vr.book_id "
+						 + "LEFT OUTER JOIN t_category AS tc ON tb.category_id = tc.id";
 			// SQLの作成
 			preparedStatement = getConnection().prepareStatement(sql);
 			// SQLの実行
@@ -82,6 +85,11 @@ public class BookDAO extends BaseDAO {
 				book.setPublisher(resultSet.getString("tb_publisher"));
 				book.setImgPath(resultSet.getString("tb_img_path"));
 				book.setDiscription(resultSet.getString("tb_discription"));
+
+				Category category = new Category();
+				category.setId(resultSet.getInt("tb_category_id"));
+				category.setName(resultSet.getString("tc_name"));
+				book.setCategory(category);
 
 				RentalControl rentalControl = new RentalControl();
 				rentalControl.setId(resultSet.getInt("vr_id"));  // TODO: 貸出管理番号が取得できるようにする

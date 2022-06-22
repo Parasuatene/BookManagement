@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import jp.co.benesse.dataaccess.value.Book;
+import jp.co.benesse.dataaccess.value.Category;
 import jp.co.benesse.service.BookService;
 
 /**
@@ -47,6 +48,7 @@ public class RegistrationCompleteServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String publisher = request.getParameter("publisher");
 		String discription = request.getParameter("discription");
+		String categoryId = request.getParameter("category");
 
 		// アップロードファイルデータの取得
 		Part part = request.getPart("uploadfile");
@@ -67,6 +69,10 @@ public class RegistrationCompleteServlet extends HttpServlet {
 		book.setPublisher(publisher);
 		book.setDiscription(discription);
 		book.setImgPath(filename);
+
+		Category category = new Category();
+		category.setId(Integer.parseInt(categoryId));
+		book.setCategory(category);
 
 		// データベースに書籍を追加する
 		BookService bookService = new BookService();

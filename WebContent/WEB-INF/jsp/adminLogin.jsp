@@ -12,7 +12,6 @@
 		<div class="login">
 			<h3 class="login_header">管理者サインイン</h3>
 			<form class="login_container" action="adminLogin" method="post">
-				<%-- <c:set var="errorMessages" value="${errorMessages}"/> --%>
 				<c:if test="${not empty errorMessage}">
 					<label for="error_message">${errorMessage}</label>
 				</c:if>

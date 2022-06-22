@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<link href="css/adminHomeStyle.css" rel="stylesheet">
 		<meta charset="UTF_8">
 		<title>書籍登録</title>
@@ -56,6 +58,17 @@
                         <th class="contact_item">書籍の説明</th>
                         <td class="contact_body">
                             <textarea name="discription" class="form_textarea" placeholder="（1,000文字以内で入力してください）"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">カテゴリ</th>
+                        <td class="contact_body">
+                            <select name="category" id="category">
+                                <option disabled selected>カテゴリを選択してください</option>
+								<c:forEach var="category" items="${categoryList}">
+                                	<option value="${category.id}">${category.name}</option>
+								</c:forEach>
+                            </select>
                         </td>
                     </tr>
                 </table>

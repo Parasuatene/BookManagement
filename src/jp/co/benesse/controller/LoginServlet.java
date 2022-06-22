@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
 
 		// userがnullの時はログイン処理に失敗したとき
 		if (user == null) {
-			String errorMessage = "ログインID、またはパスワードに誤りがあります";
+			String errorMessage = "※ログインID、またはパスワードに誤りがあります";
 			request.setAttribute("errorMessage", errorMessage);
 			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 			return;

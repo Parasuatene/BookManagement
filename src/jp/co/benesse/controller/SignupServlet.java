@@ -59,7 +59,7 @@ public class SignupServlet extends HttpServlet {
 		// ログインIDに誤りがある場合
 		// 5文字以上50文字以下、半角英数字、記号（@._-）
 		if (loginId == null || !RegexManager.isPatternMatches("^[A-Za-z0-9@._-]{5,50}$", loginId)) {
-			errorMessages.put("errorLoginId", "ログインIDは半角英数字、記号（@._-）で5文字以上、50文字以下で入力してください");
+			errorMessages.put("errorLoginId", "※ログインIDは半角英数字、記号（@._-）で5文字以上、50文字以下で入力してください");
 		}
 
 		// パスワードが5文字以上、50文字以下を満たさない場合

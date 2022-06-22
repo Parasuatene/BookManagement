@@ -33,6 +33,11 @@ public class Book {
 	private String discription;
 
 	/**
+	 * 書籍のカテゴリ
+	 */
+	private Category category;
+
+	/**
 	 * 貸出管理クラス
 	 */
 	private RentalControl rentalControl;
@@ -119,6 +124,20 @@ public class Book {
 	 */
 	public void setDiscription(String discription) {
 		this.discription = discription;
+	}
+
+	/**
+	 * @return category
+	 */
+	public Category getCategory() {
+		return category;
+	}
+
+	/**
+	 * @param category セットする category
+	 */
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	/**
