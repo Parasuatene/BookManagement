@@ -24,6 +24,7 @@ public class RegistrationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// カテゴリ一覧を取得
 		CategoryService categoryService = new CategoryService();
 		List<Category> categoryList = categoryService.getCategoryList();

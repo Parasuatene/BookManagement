@@ -42,7 +42,9 @@ public class RegistrationCompleteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		// パラメータの取得
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");

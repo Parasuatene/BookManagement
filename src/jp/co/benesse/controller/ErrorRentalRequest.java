@@ -20,6 +20,7 @@ public class ErrorRentalRequest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		request.getRequestDispatcher("WEB-INF/jsp/errorRentalRequest.jsp").forward(request, response);
 		return;
 	}

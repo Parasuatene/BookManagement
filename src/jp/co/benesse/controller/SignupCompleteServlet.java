@@ -20,7 +20,9 @@ public class SignupCompleteServlet extends HttpServlet {
 	 * TODO: signupCompleteはPOSTにすべきなので、余裕があれば修正する
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		// アカウント登録画面で保存したセッション属性を削除する
 		HttpSession session = request.getSession(false);
 		session.removeAttribute("lastName");

@@ -25,7 +25,7 @@ public class AdminLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// ログインページへのフォワード処理
+
 		request.getRequestDispatcher("WEB-INF/jsp/adminLogin.jsp").forward(request, response);
 		return;
 	}
@@ -35,10 +35,10 @@ public class AdminLoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// パラメータの取得
 		String loginId = request.getParameter("login_id");
 		String password = request.getParameter("password");
-
 
 		// ログインID・パスワードの組み合わせがDBに存在するかを確認する
 		UserService userService = new UserService();
@@ -59,7 +59,6 @@ public class AdminLoginServlet extends HttpServlet {
 		session.setAttribute("id", user.getId());
 		session.setAttribute("authority", user.getAuthority());
 
-		// ログインに成功した場合は、書籍一覧画面に移動する
 		response.sendRedirect("adminHome");
 		return;
 	}

@@ -21,6 +21,11 @@ public class BookDAO extends BaseDAO {
 		super(connection);
 	}
 
+	/**
+	 * 書籍を追加する
+	 * @param book
+	 * @return
+	 */
 	public int insert(Book book) {
 		PreparedStatement preparedStatement = null;
 		try {

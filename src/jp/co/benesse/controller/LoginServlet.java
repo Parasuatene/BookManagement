@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import debugger.PrintChecker;
 import jp.co.benesse.dataaccess.value.User;
 import jp.co.benesse.service.UserService;
 import myapi.HashGenerator;
@@ -41,27 +40,6 @@ public class LoginServlet extends HttpServlet {
 		String loginId = request.getParameter("login_id");
 		String password = request.getParameter("password");
 
-		// TODO: リファクタリング
-
-//		// エラーメッセージの格納用
-//		List<String> errorMessages = new ArrayList<>();
-
-//		if (loginId == null || "".equals(loginId)) {
-//			errorMessages.add("ログインIDが入力されていません");
-//		}
-//
-//		if (password == null || "".equals(password)) {
-//			errorMessages.add("パスワードが入力されていません");
-//		}
-
-//		// 入力されていない場合はログインページにフォワードする
-//		if (!errorMessages.isEmpty()) {
-//			request.setAttribute("errorMessages", errorMessages);
-//			request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
-//			return;
-//		}
-
-
 		// ログインID・パスワードの組み合わせがDBに存在するかを確認する
 		UserService userService = new UserService();
 		// パスワードをハッシュ値に変換
@@ -82,7 +60,6 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("authority", user.getAuthority());
 
 		// ログインに成功した場合は、書籍一覧画面に移動する
-		PrintChecker.print("LoginServlet", "ログインに成功しました");
 		response.sendRedirect("home");
 		return;
 	}

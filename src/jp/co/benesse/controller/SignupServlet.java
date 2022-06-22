@@ -75,7 +75,6 @@ public class SignupServlet extends HttpServlet {
 			return;
 		}
 
-
 		// パスワードをハッシュ値に変換する
 		password = HashGenerator.getHash(password);
 

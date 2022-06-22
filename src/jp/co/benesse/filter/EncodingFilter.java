@@ -20,7 +20,9 @@ public class EncodingFilter implements Filter {
 	// エンコーディング文字コード
 	private String encoding;
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
 		//エンコーディング
 		request.setCharacterEncoding(encoding);
 		chain.doFilter(request, response);
