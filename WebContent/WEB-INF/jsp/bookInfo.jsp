@@ -9,21 +9,18 @@
 		<title>書籍情報</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<c:set var="book" value="${book}"/>
 
 		<c:if test="${empty book}">
 			<div class="not_found">
-				<!-- ページが見つからなかった時の処理 -->
 			 	<h2>お探しのページは見つかりませんでした</h2>
 			 	<a href="home">書籍一覧ページに戻る</a>
 		 	</div>
 		</c:if>
 
 		<c:if test="${not empty book}">
-			<!-- ページが見つかった時の処理 -->
 			<div class="book_info_panel">
 				<div class="book_info">
 					<figure class="book_info_image">

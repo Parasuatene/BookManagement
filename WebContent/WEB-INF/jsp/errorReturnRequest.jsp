@@ -8,7 +8,6 @@
 		<title>返却エラー</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<div class="error_page">

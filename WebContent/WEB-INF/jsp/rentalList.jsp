@@ -9,7 +9,6 @@
 		<title>借りている書籍一覧</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<c:if test="${empty requestScope.rentalBookList}">

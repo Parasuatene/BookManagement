@@ -23,7 +23,7 @@
 				<c:if test="${not empty errorLoginId}">
 					<label for="error_message">${errorLoginId}</label>
 				</c:if>
-				<!-- ログインIDが既に存在した場合のエラーメッセージ -->
+
 				<c:set var="errorDistinctLoginId" value="${errorMessages.errorDistinctLoginId}"/>
 				<c:if test="${not empty errorDistinctLoginId}">
 					<label for="error_message">${errorDistinctLoginId}</label>

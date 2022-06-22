@@ -10,7 +10,6 @@
 		<title>書籍登録</title>
 	</head>
     <body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="adminHeader.jsp" %>
 
         <div class="contact">

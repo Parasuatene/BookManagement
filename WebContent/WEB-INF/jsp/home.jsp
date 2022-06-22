@@ -9,7 +9,6 @@
 		<title>GeeBook</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<c:forEach var="book" items="${bookList}">

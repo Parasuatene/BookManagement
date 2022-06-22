@@ -9,7 +9,6 @@
 		<title>書籍情報</title>
 	</head>
 	<body>
-		<!-- ヘッダーの読み込み -->
 		<%@ include file="header.jsp" %>
 
 		<c:set var="book" value="${book}"/>
