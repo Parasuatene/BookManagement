@@ -191,7 +191,7 @@ label[for="login_id"], label[for="password"], label[for="full_name"]{
 }
 
 .signup_complete, .not_found, .rental_complete, .return_complete, .error_page {
-	margin: 50px 200px 0 200px;
+	margin: 0 auto 0 auto;
 	text-align: center;
 	padding: 1rem 2rem;
 }
@@ -222,6 +222,7 @@ header {
 	display: flex;
 	position: relative;
 	background-color:rgb(49, 49, 49);
+	margin-bottom: 50px;
 	/* border-bottom: medium solid #b2b2b2; */
 }
 
@@ -362,7 +363,7 @@ nav li:hover{
 }
 
 .book_list {
-	margin-top: 50px;
+	margin-bottom: 50px;
 	width: 800px;
 	height: 280px;
 	position: relative;
@@ -430,7 +431,6 @@ nav li:hover{
 /* 書籍貸出申請画面 */
 /* ============================= */
 .book_info_panel {
-	margin-top: 50px;
 	width: 800px;
 	height: auto;
 	position: relative;
