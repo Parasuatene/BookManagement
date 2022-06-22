@@ -13,12 +13,19 @@ body {
     /* font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; */
 }
 
+#figure {
+    width: 200px;
+    height: auto;
+    font-size: 12px;
+    color: rgb(121, 121, 121);
+}
+
 /* 書籍の登録 */
 
 .contact {
     width: 700px;
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 0 0;
 }
 
 .contact_ttl {
@@ -31,7 +38,7 @@ body {
 
 .contact_table {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -64,6 +71,10 @@ body {
 }
 
 input[type="text"] {
+    outline: none;
+}
+
+select {
     outline: none;
 }
 
