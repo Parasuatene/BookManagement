@@ -38,7 +38,7 @@ public class RentalCompleteServlet extends HttpServlet {
 
 		// TODO: ユーザー情報が取得できなかった場合はエラーページにフォワードし、ログインするように促す
 		if (userId == null) {
-			System.out.println("ログインしてください");
+			response.sendRedirect("login");
 			return;
 		}
 
