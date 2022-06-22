@@ -46,6 +46,22 @@ public class BookService {
 	}
 
 	/**
+	 * データベースから名前に該当する書籍一覧を取得する
+	 * @param 検索単語
+	 * @return データベース内の書籍リスト
+	 */
+	public List<Book> getBookListByQuery(String query) {
+		ConnectionManager connectionManager = new ConnectionManager();
+		try {
+			Connection connection = connectionManager.getConnection();
+			BookDAO bookDAO = new BookDAO(connection);
+			return bookDAO.selectByQuery(query);
+		} finally {
+			connectionManager.closeConnection();
+		}
+	}
+
+	/**
 	 * 指定したIDに該当する書籍情報を取得する
 	 * @param argId
 	 * @return IDに該当する書籍。または該当しない場合はnullを返す。

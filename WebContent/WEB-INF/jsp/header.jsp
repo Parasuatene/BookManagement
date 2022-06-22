@@ -5,7 +5,7 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <header>
 	<h1 class="title"><a href="home">GeeBook</a></h1>
-	<form class="search_container" action="" method="get">
+	<form class="search_container" action="home" method="get">
 		<input type="text" name="q" placeholder="検索キーワード（本のタイトル、著者名など）">
 		<input type="submit" value="&#xf002">
 	</form>

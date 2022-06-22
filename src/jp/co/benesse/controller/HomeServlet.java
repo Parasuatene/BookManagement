@@ -1,6 +1,7 @@
 package jp.co.benesse.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -25,17 +26,23 @@ public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// 書籍一覧を取得する
+		// 本の検索ワード
+		String searchQuery = request.getParameter("q");
+
+		// 検索クエリに応じて表示する書籍を変更する
 		BookService bookService = new BookService();
-		List<Book> bookList = bookService.getBookList();
+		List<Book> bookList = new ArrayList<Book>();
+		if (searchQuery == null || "".equals(searchQuery)) {
+			// 全ての書籍を取得する
+			bookList = bookService.getBookList();
+		} else {
+			// 検索クエリに該当する書籍を取得する
+			bookList = bookService.getBookListByQuery(searchQuery);
+		}
 
-		// リクエストにセット
 		request.setAttribute("bookList", bookList);
-
-		// フォワード処理
 		request.getRequestDispatcher("WEB-INF/jsp/home.jsp").forward(request, response);
 		return;
-
 	}
 
 }
