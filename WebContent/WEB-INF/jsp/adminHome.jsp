@@ -27,7 +27,7 @@
 					<c:if test="${not empty startDate and empty endDate}">
 						<p class="rental_status">貸出中（返却予定日:${scheduleDate}）</p>
 					</c:if>
-					<h3><a href="bookInfo?id=${book.id}">${book.title}</a></h3>
+					<h3>${book.title}</h3>
 					<label for="author">${book.author}</label>
 					<label for="publisher">${book.publisher}</label>
 					<p class="discription">${book.discription}</p>
