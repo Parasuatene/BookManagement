@@ -75,7 +75,7 @@ public class RegistrationCompleteServlet extends HttpServlet {
 		Category category = new Category();
 		if (categoryId == null) {
 			System.out.println("categoryId" + categoryId);
-			category.setId(1);
+			category.setId(1);  // 1はその他を示す
 		} else {
 			System.out.println("categoryId" + categoryId);
 			category.setId(Integer.parseInt(categoryId));
