@@ -42,9 +42,6 @@ public class UserService {
 			UserDAO userDAO = new UserDAO(connection);
 			User user = userDAO.selectByIdAndPassword(argId, argPassword);
 			return user;
-		} catch (RuntimeException e) {
-			connectionManager.rollback();
-			throw e;
 		} finally {
 			connectionManager.closeConnection();
 		}

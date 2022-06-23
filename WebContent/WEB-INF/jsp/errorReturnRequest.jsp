@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="css/style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>返却エラー</title>
 	</head>

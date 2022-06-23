@@ -97,7 +97,7 @@ public class BookDAO extends BaseDAO {
 				book.setCategory(category);
 
 				RentalControl rentalControl = new RentalControl();
-				rentalControl.setId(resultSet.getInt("vr_id"));  // TODO: 貸出管理番号が取得できるようにする
+				rentalControl.setId(resultSet.getInt("vr_id"));
 				rentalControl.setUserId(resultSet.getString("vr_user_id"));
 				rentalControl.setBookId(resultSet.getInt("vr_book_id"));
 				rentalControl.setStartDate(resultSet.getDate("vr_start_date"));
@@ -167,7 +167,7 @@ public class BookDAO extends BaseDAO {
 				book.setDiscription(resultSet.getString("tb_discription"));
 
 				RentalControl rentalControl = new RentalControl();
-				rentalControl.setId(resultSet.getInt("vr_id"));  // TODO: 貸出管理番号が取得できるようにする
+				rentalControl.setId(resultSet.getInt("vr_id"));
 				rentalControl.setUserId(resultSet.getString("vr_user_id"));
 				rentalControl.setBookId(resultSet.getInt("vr_book_id"));
 				rentalControl.setStartDate(resultSet.getDate("vr_start_date"));
@@ -228,7 +228,7 @@ public class BookDAO extends BaseDAO {
 				book.setDiscription(resultSet.getString("tb_discription"));
 
 				RentalControl rentalControl = new RentalControl();
-				rentalControl.setId(resultSet.getInt("vr_id"));  // TODO: 貸出管理番号が取得できるようにする
+				rentalControl.setId(resultSet.getInt("vr_id"));
 				rentalControl.setUserId(resultSet.getString("vr_user_id"));
 				rentalControl.setBookId(resultSet.getInt("vr_book_id"));
 				rentalControl.setStartDate(resultSet.getDate("vr_start_date"));
@@ -287,7 +287,7 @@ public class BookDAO extends BaseDAO {
 				book.setDiscription(resultSet.getString("tb_discription"));
 
 				RentalControl rentalControl = new RentalControl();
-				rentalControl.setId(resultSet.getInt("vr_id"));  // TODO: 貸出管理番号が取得できるようにする
+				rentalControl.setId(resultSet.getInt("vr_id"));
 				rentalControl.setUserId(resultSet.getString("vr_user_id"));
 				rentalControl.setBookId(resultSet.getInt("vr_book_id"));
 				rentalControl.setStartDate(resultSet.getDate("vr_start_date"));
@@ -346,7 +346,7 @@ public class BookDAO extends BaseDAO {
 				book.setDiscription(resultSet.getString("tb_discription"));
 
 				RentalControl rentalControl = new RentalControl();
-				rentalControl.setId(resultSet.getInt("tr_id"));  // TODO: 貸出管理番号が取得できるようにする
+				rentalControl.setId(resultSet.getInt("tr_id"));
 				rentalControl.setUserId(resultSet.getString("tr_user_id"));
 				rentalControl.setBookId(resultSet.getInt("tr_book_id"));
 				rentalControl.setStartDate(resultSet.getDate("tr_start_date"));

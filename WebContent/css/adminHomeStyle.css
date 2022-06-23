@@ -24,7 +24,7 @@ body {
 
 .contact {
     width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     padding: 0 0;
 }
 
@@ -126,23 +126,25 @@ select {
 
 /* 完了画面 */
 .regist_complete {
-	margin: 50px 200px 0 200px;
+	margin: 0 auto 0 auto;
 	text-align: center;
 	padding: 1rem 2rem;
 }
 
-.regist_complete  h2 {
+.regist_complete h2 {
 	font-size: 35px;
+	margin-bottom: 35px;
 }
 
-.regist_complete  p {
+.regist_complete p {
 	font-size: 90%;
+	margin-bottom: 15px
 }
 
-.regist_complete  a {
+.regist_complete a {
 	color: #437be3;
 }
 
-.regist_complete  a:hover {
+.regist_complete a:hover {
 	color: #003598;
 }

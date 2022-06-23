@@ -56,7 +56,7 @@ public class RegistrationCompleteServlet extends HttpServlet {
 		Part part = request.getPart("uploadfile");
 		String filename = this.getFileName(part);
 
-		// TODO: 画像を指定しなかった際にエラーになるので修正する
+		// TODO: 【レビューで指摘された内容】画像を指定しなかった際にエラーになるので修正する
 		if (filename != null) {
 			part.write(getServletContext().getRealPath("/img") + "/" + filename);
 			System.out.println("[ " + filename + " ]のアップロードが完了しました");
@@ -73,7 +73,13 @@ public class RegistrationCompleteServlet extends HttpServlet {
 		book.setImgPath(filename);
 
 		Category category = new Category();
-		category.setId(Integer.parseInt(categoryId));
+		if (categoryId == null) {
+			System.out.println("categoryId" + categoryId);
+			category.setId(1);
+		} else {
+			System.out.println("categoryId" + categoryId);
+			category.setId(Integer.parseInt(categoryId));
+		}
 		book.setCategory(category);
 
 		// データベースに書籍を追加する

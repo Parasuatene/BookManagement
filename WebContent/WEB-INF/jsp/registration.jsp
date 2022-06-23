@@ -62,7 +62,7 @@
                     <tr>
                         <th class="contact_item">カテゴリ</th>
                         <td class="contact_body">
-                            <select name="category" id="category">
+                            <select name="category" id="category" required="required">
                                 <option disabled selected>カテゴリを選択してください</option>
 								<c:forEach var="category" items="${categoryList}">
                                 	<option value="${category.id}">${category.name}</option>
@@ -72,7 +72,7 @@
                     </tr>
                 </table>
                 <input class="contact_submit" type="submit" value="登録" />
-                <script src="preview.js"></script>
+                <script src="js/preview.js"></script>
             </form>
         </div>
     </body>
